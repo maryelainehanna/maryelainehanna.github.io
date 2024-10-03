@@ -9,8 +9,6 @@ multi line comment */
 /* CSS files can be used to access e.g. fonts. do this by going to Google fonts and you can see somewhere in the bottom where you can import the css link for the font */
 @import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@900&display=swap');
 
-bgColor: #6B6B6B 
-
 /* Format my paragraph -- this applies to all things that have the "p" tag*/
 p {
 	font-size: 18px;
