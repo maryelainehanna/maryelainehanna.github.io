@@ -1,0 +1,37 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+   
+    "title": {"text": "Practice with Fake Data"},
+   
+    "width": 400,
+    "height": 300,
+     
+    "data": {
+      "values": [
+        {"Day": "Monday","Hours studying": 5},
+        {"Day": "Tuesday.","Hours studying": 4},
+        {"Day": "Wednesday","Hours studying": 8},
+        {"Day": "Thursday","Hours studying": 7},
+        {"Day": "Friday","Hours studying": 4},
+        {"Day": "Saturday","Hours studying": 3},
+        {"Day": "Sunday", "Hours studying": 3}
+      ]
+    },
+   
+    "mark": {
+      "type": "bar",
+      "color": "red"
+    },
+   
+    "encoding": {
+      "x": {
+        "field": "Day"
+      },  
+   
+      "y": {
+        "field": "Hours studying",
+        "type": "quantitative"}
+      }
+  }
+   
+  
