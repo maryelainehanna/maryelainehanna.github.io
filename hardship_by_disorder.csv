@@ -1,0 +1,11 @@
+﻿hardship,percent,population
+"Fallen behind with \nbills, rent or mortgage",6.8,Unlikely to have a disorder
+"Could not afford to buy \nenough food, or had to use \na food bank",3.5,Unlikely to have a disorder
+Could not afford to keep \n home warm enough,7.6,Unlikely to have a disorder
+Lost home or became homeless,0.2,Unlikely to have a disorder
+Parent or somebody close to\n them is or was seriously ill,10.6,Unlikely to have a disorder
+"Fallen behind with \nbills, rent or mortgage",18.7,Probable disorder
+"Could not afford to buy \nenough food, or had to use \na food bank",15.3,Probable disorder
+Could not afford to keep \n home warm enough,19.9,Probable disorder
+Lost home or became homeless,0.9,Probable disorder
+Parent or somebody close to\n them is or was seriously ill,13.7,Probable disorder
