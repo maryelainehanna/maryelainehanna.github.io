@@ -1,4 +1,16 @@
-﻿year,percent of 8 to 16 year olds missing 15+ days of school,percent of 8 to 16 year olds wit a probably disorder missing 15+ days of school,girls,girls with a probable disorder,boys,boys with a probable disorder
-2021,11,18.1,10.3,17.2,11.6,19
-2022,5.9,13.4,5.4,13.2,6.5,13.6
-2023,3.8,11.2,4.4,11.3,3.2,11
+﻿year,percent,population
+2017,12.5,all
+2020,17.1,all
+2021,17.7,all
+2022,19.0,all
+2023,20.3,all
+2017,12.4,girls
+2020,17.2,girls
+2021,18.0,girls
+2022,18.5,girls
+2023,19.8,girls
+2017,12.6,boys
+2020,16.9,boys
+2021,17.4,boys
+2022,19.4,boys
+2023,20.8,boys
