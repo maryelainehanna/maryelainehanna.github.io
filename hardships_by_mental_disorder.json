@@ -1,0 +1,50 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/hardships_by_mental_disorder.csv"
+  },
+  "width": 1000,
+  "height": 300,
+  "padding": {"bottom": 30, "top":30},
+  "title": {
+    "text": "Percent of 8-16 year-olds in England experiencing household hardships",
+    "subtitle": "Source: NHS Mental Health of Children and Young People in England Survey, 2023"
+  },
+  "transform": [
+    {"calculate": "datum.percent + '%'", "as": "percent_with_symbol"}
+  ],
+  "mark": {"type": "bar", "size": 85, "tooltip": true},
+  "encoding": {
+    "x": {
+      "field": "hardship",
+      "type": "nominal",
+      "axis": {
+        "title": "",
+        "labelExpr": "[slice(datum.label,0,19), slice(datum.label,19)]",
+        "labelAngle": 0,
+        "labelOverlap": false,
+        "labelLimit": 300,
+        "labelLineHeight": 15,
+        "tickMinStep": 1,
+        "labelBound": true
+      }
+    },
+    "y": {
+      "field": "percent",
+      "type": "quantitative",
+      "axis": {"title": "%", "grid": false},
+      "scale": {"domain": [0, 25], "nice": false}
+    },
+    "xOffset": {"field": "population"},
+    "color": {
+      "field": "population",
+      "scale": {
+        "domain": ["Unlikely to have a disorder", "Probable disorder"],
+        "range": ["#ba61f1", "#D8AFF1"]
+      },
+      "legend": {"title": "", "orient": "top"}
+    },
+    "tooltip": {"field": "percent_with_symbol", "type": "nominal"}
+  },
+  "config": {}
+}

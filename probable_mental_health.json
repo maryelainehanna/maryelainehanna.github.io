@@ -1,0 +1,55 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/probable_mental_health_all.csv"
+  },
+  "width": 400,
+  "height": 300,
+  "title": {
+    "text":
+    "Percent of 8-16 year-olds in England with probable mental health disorders",
+    "subtitle":"Source: NHS Mental Health of Children and Young People in England Survey"
+  },
+  "layer": [
+    {
+      "mark": {"type": "bar", "color": "mediumpurple", "width": 55},
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "axis": {"title": "", "labelAngle": 0}
+        },
+        "y": {
+          "field": "percent",
+          "type": "quantitative",
+          "axis": {
+            "title": "%",
+            "grid": false,
+            "ticks": true,
+            "tickSize": 10,
+            "tickCount": 6
+          },
+          "scale": {"domain": [0, 25], "nice": false}
+        },
+        "xOffset": {"field": "population"}
+      }
+    },
+    {
+      "mark": {"type": "text", "dy": -5, "align": "center"},
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal"},
+        "y": {"field": "percent", "type": "quantitative"},
+        "text": {
+          "condition": {
+            "test": "datum.percent>0",
+            "field": "percent",
+            "type": "quantitative"
+          },
+          "value": ""
+        },
+        "xOffset": {"field": "population"}
+      }
+    }
+  ],
+  "config": {}
+}
