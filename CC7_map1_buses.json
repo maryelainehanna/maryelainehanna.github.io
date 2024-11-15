@@ -1,0 +1,53 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {"text": "CC7", "subtitle": ["Test", "Source: TfL"]},
+    "description": "Point map, lecture 7",
+    "width": 600,
+    "height": 400,
+    "layer": [
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/london_421.topojson",
+          "format": {"feature": "london_421.geojson", "type": "topojson"}
+        },
+        "mark": {
+          "type": "geoshape",
+          "fill": "darkblue",
+          "opacity": 0.5,
+          "stroke": "black",
+          "strokeWidth": 1
+        },
+  
+        "transform": [
+          {
+            // Join aggregate bus stop data to borough shapes
+            "lookup": "properties.name",
+            "from": {
+              "data": {
+                "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/borough_stops.csv"
+              },
+              "key": "name",
+              "fields": ["stops"]
+            }
+          }
+        ],
+        "encoding": {
+          "tooltip": [
+            {"field": "properties.name", "type": "nominal", "title": "Borough"},
+            {"field": "stops", "type": "quantitative", "title": "Bus Stops"}
+          ]
+        }
+      },
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/490Stops_with_borough.csv"
+        },
+        "mark": {"type": "circle", "size": 2, "color": "orangered"},
+        "encoding": {
+          "latitude": {"field": "Latitude", "type": "quantitative"},
+          "longitude": {"field": "Longitude", "type": "quantitative"}
+        }
+      }
+    ]
+  }
+  
