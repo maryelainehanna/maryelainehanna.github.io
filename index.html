@@ -1,24 +1,5 @@
-<!-- This HTML file provides a simple example of a portfolio page. It contains a header, a few sections, and a few charts. -->
-<!-- It works with the three css files in this folder: example1.css, example2.css and example3.css. -->
-<!-- The HTML file defines the structure of the page, and the CSS files define how it looks. -->
-<!-- The CSS examples are all designed to work with this page. Try swapping them out on line 29 and see what happens. -->
-
-<!-- Take a look around and make your own copy to adapt for your own use. -->
-
-<!-- This is a comment -->
-<!-- Comments are not displayed in the browser -->
-<!-- They can be used to leave notes in the code -->
-
 <!DOCTYPE html>
 <html> 
-    <!-- HTML is heirarchial: tags like this define elements on the page. 
-    Each tag does something different. For example:
-        - The <html> tag defines the whole document.
-        - The <h1> tag defines a large heading
-        - The <p> tag defines a paragraph
-        - Tags appear as an opening <div> and closing </div> pair
-    -->
-
 <head>    
     <!-- The head tag links to resources our page needs and defines information about it. Tags in the <head> aren't displayed on the page. -->
 
@@ -40,39 +21,30 @@
     </style>
 </head>
 
-<body> 
-<!-- The body tag contains the elements that visitors to our page will see. -->
-    <h1 class="big" style="margin-bottom: 0px;"> <!-- We have added a class to the header called "big" which we can use to style it in the CSS -->
-        <!-- This is a header, it is the largest text on the page -->
-        Mary Hanna's Website
-    </h1>
-    <p style="margin-top: 0px; color: darkblue">
-        <!-- we're setting the margin to 0px so the header and author name are close together -->
-        Mary Hanna | <a href="https://www.linkedin.com/in/maryelainehanna/">LinkedIn</a> | <a
-            href="https://www.github.com/maryelainehanna">GitHub</a>
-            | <a href="mary_hanna_portfolio.html">Portfolio</a>
-    </p>
-    <h3 class="small"> <!-- We have added a class to the header called "small" which we can use to style it in the CSS -->
-        This page is where Mary will put her project.
-    </h3>
 
-    <!-- We're organising the page into sections, with each section containing a chart, title and a description -->
-    <section>
-        <div class="chart-description">
-            <h2>Mary's Project</h2>
-            <h3>A map of all bus stops in London by borough.</h3>
-            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                Explanation of what I did. Note to self: address unassigned bus stops?
-            </p>
-        </div>
-        <figure id="project1spec"></figure> 
-    </section>
-
-
+    <body> 
+        <h1 class="big" style="margin-bottom: 0px;">Mary Hanna's Website</h1>
+        <p style="margin-top: 0px; color: rgb(53, 74, 10)">
+            Mary Hanna | <a href="https://www.linkedin.com/in/maryelainehanna/">LinkedIn</a> | 
+            <a href="https://www.github.com/maryelainehanna">GitHub</a> | 
+            <a href="mary_hanna_portfolio.html">Portfolio</a>
+        </p>
+        <h3 class="small">This page is where Mary will put her project.</h3>
+    
+    
+        <section>
+            <div class="chart-description">
+                <h2>Mary's Project</h2>
+                <h3>A map of all bus stops in London by borough.</h3>
+                <p>Explanation of what I did. Note to self: unassigned bus stops?</p>
+                <figure id="Location1"></figure>
+            </div>
+        </section>
+    
 <script>
-    let project_1_spec ="CC7_map1_buses.json";
+    let project_1_spec ="project_1_buses.json";
 
-    vegaEmbed('#project_1_spec', project1spec)
+    vegaEmbed('#Location1', project_1_spec)
 </script>
 
 
