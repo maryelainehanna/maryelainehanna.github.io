@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": {"text": "CC7", "subtitle": ["Test", "Source: TfL"]},
+    "title": {"text": "Map of London bus stops", "subtitle": ["Source: TfL"]},
     "description": "Point map, lecture 7",
     "width": 600,
     "height": 400,
@@ -20,7 +20,6 @@
   
         "transform": [
           {
-            // Join aggregate bus stop data to borough shapes
             "lookup": "properties.name",
             "from": {
               "data": {
