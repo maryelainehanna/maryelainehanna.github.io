@@ -1,0 +1,29 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "London Boroughs"
+  },
+  "description": "Point map, lecture 7",
+  "width": 600,
+  "height": 400,
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/london_421.topojson",
+        "format": { "feature": "london_421.geojson", "type": "topojson" }
+      },
+      "mark": {
+        "type": "geoshape",
+        "opacity": 0.5,
+        "fill": "lightgreen",
+        "stroke": "black",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "tooltip": [
+          { "field": "properties.name", "type": "nominal", "title": "Borough" }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+      "text": "Pupil home to school distance for state funded schools by Borough, 2018",
+      "subtitle": ["Source: Greater London Authority"]
+    },
+    "description": "Point map, lecture 7",
+    "width": 600,
+    "height": 400,
+    "layer": [
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/london_421.topojson",
+          "format": {"feature": "london_421.geojson", "type": "topojson"}
+        },
+        "mark": {
+          "type": "geoshape",
+          "opacity": 0.5,
+          "stroke": "black",
+          "strokeWidth": 1
+        },
+        "transform": [
+          {
+            "lookup": "properties.name",
+            "from": {
+              "data": {
+                "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/pupil_home_school_distance.csv"
+              },
+              "key": "borough",
+              "fields": ["percent"]
+            }
+          }
+        ],
+        "encoding": {
+          "color": {
+            "field": "percent",
+            "type": "quantitative",
+            "scale": {"scheme": "bluegreen", "domain": [0, 25]}
+          },
+          "tooltip": [
+            {"field": "properties.name", "type": "nominal", "title": "Borough"},
+            {"field": "percent", "type": "quantitative", "title": "Percent"}
+          ]
+        }
+      }
+    ]
+  }
