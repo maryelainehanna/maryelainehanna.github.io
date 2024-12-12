@@ -1,0 +1,62 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 300,
+  "height": 450,
+  "title": {
+    "text": "Price of a pack of tampons",
+    "subtitle": [
+      "Average yearly price of pack of Tampons (pack of 10-20)",
+      "Source: ONS Microdata via Davies (2021)"
+    ]
+  },
+  "padding": {
+    "top": 20,
+    "left": 20,
+    "right": 20
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/tampon_prices_by_region.csv"
+  },
+  "params": [
+    {
+      "name": "yearParam",
+      "value": 1988,
+      "bind": {
+        "input": "range",
+        "min": 1988,
+        "max": 2023,
+        "step": 1,
+        "name": "Start year:"
+      }
+    }
+  ],
+  "transform": [
+    {
+      "lookup": "id",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/uk_region_map.json",
+          "format": { "property": "features" }
+        },
+        "key": "properties.id",
+        "fields": ["geometry", "properties", "type"]
+      }
+    },
+    { "filter": "yearParam == datum.year" }
+  ],
+  "mark": { "type": "geoshape", "stroke": "lightgrey", "size": 0.5 },
+  "encoding": {
+    "color": {
+      "field": "price",
+      "type": "quantitative",
+      "scale": {
+        "scheme": "lightmulti"
+      },
+      "legend": { "labelExpr": "'£'+datum.label + '/pack'", "orient": "top" }
+    },
+    "tooltip": [
+      { "field": "properties.NAME_LATN", "title": "Region" },
+      { "field": "price", "format": ".2f" }
+    ]
+  }
+}
