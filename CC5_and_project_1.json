@@ -1,0 +1,87 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+      "text": "Station crime in the TfL network, 2023-2024",
+      "subtitle": [
+        "London Underground, London Overground, DLR, and Tramlink Stations",
+        "Source: British Transport Police"
+      ]
+    },
+    "width": 500,
+    "height": 500,
+    "projection": {"type": "mercator"},
+    "layer": [
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/london_421.topojson",
+          "format": {"feature": "london_421.geojson", "type": "topojson"}
+        },
+        "mark": {"type": "geoshape", "fill": "lightslategray"}
+      },
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/Stations_20180921.csv",
+          "format": {"type": "csv"}
+        },
+        "transform": [
+          {
+            "lookup": "NAME",
+            "from": {
+              "data": {
+                "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/station_data_with_crime.csv",
+                "format": {"type": "csv"}
+              },
+              "key": "NAME",
+              "fields": ["Crime Data"]
+            }
+          },
+          {
+            "filter": "!(datum.NAME === 'Chesham' || datum.NAME === 'Amersham' || datum.NAME === 'Chalfont & Latimer' || datum.NAME === 'Chorleywood' || datum.NAME === 'Croxley' || datum.NAME === 'Moor Park' || datum.NAME === 'Watford' || datum.NAME === 'Watford Junction' || datum.NAME === 'Watford High Street' || datum.NAME === 'Bushey' || datum.NAME === 'Carpenders Park' || datum.NAME === 'Theobalds Grove' || datum.NAME === 'Cheshunt' || datum.NAME === 'Epping' || datum.NAME === 'Theydon Bois' || datum.NAME === 'Debden' || datum.NAME === 'Loughton' || datum.NAME === 'Buckhurst Hill' || datum.NAME === 'Roding Valley' || datum.NAME === 'Chigwell' || datum.NAME === 'Grange Hill')"
+          }
+        ],
+        "layer": [
+          {
+            "params": [
+              {
+                "name": "hover",
+                "select": {"type": "point", "on": "mouseover", "clear": "mouseout"}
+              }
+            ],
+            "mark": {"type": "circle", "size": 60},
+            "encoding": {
+              "longitude": {"field": "x", "type": "quantitative"},
+              "latitude": {"field": "y", "type": "quantitative"},
+              "tooltip": [
+                {"field": "NAME", "title": "Station"},
+                {"field": "NETWORK", "title": "TfL Network"},
+                {"field": "Crime Data", "title": "Total Crime"}
+              ],
+              "color": {
+                "field": "Crime Data",
+                "type": "quantitative",
+                "scale": {"domain": [0, 100], "scheme": "yelloworangebrown"},
+                "legend": {
+                  "title": "Crime Data",
+                  "labelExpr": "datum.value == 100 ? '100+' : datum.label"
+                }
+              },
+              "opacity": {
+                "condition": {"param": "hover", "value": 1},
+                "value": 0.5
+              },
+              "size": {
+                "condition": {
+                  "param": "hover",
+                  "value": 200,
+                  "empty": false
+                },
+                "value": 60
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+  
+  
