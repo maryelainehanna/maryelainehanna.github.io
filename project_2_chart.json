@@ -1,0 +1,78 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+      "text": "Lost customer hours on London underground lines, 2016-2020",
+      "subtitle": ["Source: Transport for London (TfL)"],
+      "subtitleColor": "darkslategrey"
+    },
+    "width": 500,
+    "height": 300,
+    "view": {"stroke": "transparent"},
+    "data": {
+      "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/transformed_lost_customer_hours.csv"
+    },
+    "mark": "area",
+    "selection": {
+      "region": {"type": "multi", "fields": ["Line"], "bind": "legend"}
+    },
+    "encoding": {
+      "x": {
+        "field": "Date",
+        "type": "temporal",
+        "timeUnit": "year",
+        "axis": {"format": "%Y", "grid": false, "title": null}
+      },
+      "y": {
+        "aggregate": "sum",
+        "field": "Lost Customer Hours",
+        "type": "quantitative",
+        "stack": "zero",
+        "axis": {
+          "title": "Lost Customer Hours",
+          "gridDash": [1, 5],
+          "titleAngle": 0,
+          "titleAlign": "left",
+          "titleFontStyle": "italic",
+          "titleY": -10,
+          "format": ".1s",
+          "values": [5000000, 10000000, 20000000, 30000000, 40000000]
+        }
+      },
+      "color": {
+        "field": "Line",
+        "type": "nominal",
+        "scale": {
+          "domain": [
+            "Bakerloo",
+            "Central",
+            "District",
+            "Hammersmith & City",
+            "Jubilee",
+            "Metropolitan",
+            "Northern",
+            "Piccadilly",
+            "Victoria",
+            "Waterloo & City"
+          ],
+          "range": [
+            "#B36305",
+            "#E32017",
+            "#00782A",
+            "#F3A9BB",
+            "#A0A5A9",
+            "#9B0056",
+            "#000000",
+            "#003688",
+            "#0098D4",
+            "#95CDBA"
+          ]
+        },
+        "legend": {
+          "title": "Line",
+          "labelFontSize": 12 
+        }
+      },
+      "opacity": {"condition": {"selection": "region", "value": 1}, "value": 0.1}
+    }
+  }
+  
