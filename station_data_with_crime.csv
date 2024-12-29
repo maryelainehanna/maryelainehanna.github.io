@@ -311,9 +311,17 @@ Woodford (LU Station),Woodford (LU Station),/data/7145670,31,Woodford,London Und
 Woodside Park (LU Station),Woodside Park (LU Station),/data/8434010,17,Woodside Park,London Underground
 Woolwich Arsenal (DLR),Woolwich Arsenal (DLR),/data/9262120,15,Woolwich Arsenal,DLR
 Acton Central (Station),Acton Central (London Overground),/data/9251996,7,Acton Central,London Overground
+Addiscombe (Tram Stop),Addiscombe (Tramlink),/data/8200300,3,Addiscombe,Tramlink
+Ampere Way (Tram Stop),Ampere Way (Tramlink),/data/9284136,0,Ampere Way,Tramlink
 Anerley (Station),Anerley (London Overground),/data/7683211,1,Anerley,London Overground
+Arena (Tram Stop),Arena (Tramlink),/data/9284134,4,Arena,Tramlink
+Avenue Road (Tram Stop),Avenue Road (Tramlink),/data/9260983,0,Avenue Road,Tramlink
 Barking (Station),Barking (London Overground),/data/9498691,92,Barking,London Overground
+Beckenham Road (Tram Stop),Beckenham Road (Tramlink),/data/9261258,1,Beckenham Road,Tramlink
+Beddington Lane (Tram Stop),Beddington Lane (Tramlink),/data/8201140,3,Beddington Lane,Tramlink
+Belgrave Walk (Tram Stop),Belgrave Walk (Tramlink),/data/9254585,2,Belgrave Walk,Tramlink
 Bethnal Green (Station),Bethnal Green (London Overground),/data/9250300,7,Bethnal Green,London Overground
+Blackhorse Lane (Tram Stop),Blackhorse Lane (Tramlink),/data/9266671,1,Blackhorse Lane,Tramlink
 Brockley (Station),Brockley (London Overground),/data/7684764,5,Brockley,London Overground
 Brondesbury (Station),Brondesbury (London Overground),/data/9544763,5,Brondesbury,London Overground
 Brondesbury Park (Station),Brondesbury Park (London Overground),/data/9544772,2,Brondesbury Park,London Overground
@@ -326,23 +334,31 @@ Camden Road (Station),Camden Road (London Overground),/data/9249153,26,Camden Ro
 Canada Water (Station),Canada Water (London Overground),/data/6925016,0,Canada Water,London Overground
 Canonbury (Station),Canonbury (London Overground),/data/9260206,20,Canonbury,London Overground
 Carpenders Park (Station),Carpenders Park (London Overground),/data/9283813,24,Carpenders Park,London Overground
+Centrale (Tram Stop),Centrale (Tramlink),/data/9267748,2,Centrale,Tramlink
 Cheshunt (Station),Cheshunt (London Overground),/data/6416515,56,Cheshunt,London Overground
 Chingford (Station),Chingford (London Overground),/data/8649290,8,Chingford,London Overground
+Church Street (Tram Stop),Church Street (Tramlink),/data/9267752,4,Church Street,Tramlink
 Clapham High Street (Station),Clapham High Street (London Overground),/data/8016219,6,Clapham High Street,London Overground
 Clapham Junction (Station),Clapham Junction (London Overground),/data/9256674,255,Clapham Junction,London Overground
 Clapton (Station),Clapton (London Overground),/data/7667840,3,Clapton,London Overground
+Coombe Lane (Tram Stop),Coombe Lane (Tramlink),/data/8201693,2,Coombe Lane,Tramlink
 Crouch Hill (Station),Crouch Hill (London Overground),/data/9260310,2,Crouch Hill,London Overground
 Crystal Palace (Station),Crystal Palace (London Overground),/data/7682917,12,Crystal Palace,London Overground
 Dalston (Kingsland) (Station),Dalston (Kingsland) (London Overground),/data/9281402,18,Dalston,Kingsland) (London Overground
 Dalston Junction (Station),Dalston Junction (London Overground),/data/9261542,31,Dalston Junction,London Overground
 Denmark Hill (Station),Denmark Hill (London Overground),/data/8101626,17,Denmark Hill,London Overground
+Dundonald Road (Tram Stop),Dundonald Road (Tramlink),/data/9496946,0,Dundonald Road,Tramlink
+East Croydon (Tram Stop),East Croydon (Tramlink),/data/9284140,8,East Croydon,Tramlink
 Edmonton Green (Station),Edmonton Green (London Overground),/data/6483316,15,Edmonton Green,London Overground
 Emerson Park (Station),Emerson Park (London Overground),/data/8649273,1,Emerson Park,London Overground
 Enfield Town (Station),Enfield Town (London Overground),/data/6484142,15,Enfield Town,London Overground
 Euston (Station),Euston (London Overground),/data/9249365,963,Euston,London Overground
+Fieldway (Tram Stop),Fieldway (Tramlink),/data/9267751,0,Fieldway,Tramlink
 Finchley Road & Frognal (Station),Finchley Road & Frognal (London Overground),/data/9249149,5,Finchley Road & Frognal,London Overground
 Forest Hill (Station),Forest Hill (London Overground),/data/8971795,11,Forest Hill,London Overground
+George Street (Tram Stop),George Street (Tramlink),/data/8201141,3,George Street,Tramlink
 Gospel Oak (Station),Gospel Oak (London Overground),/data/9249144,19,Gospel Oak,London Overground
+Gravel Hill (Tram Stop),Gravel Hill (Tramlink),/data/9284180,2,Gravel Hill,Tramlink
 Gunnersbury (Station),Gunnersbury (London Overground),/data/8731814,0,Gunnersbury,London Overground
 Hackney Central (Station),Hackney Central (London Overground),/data/9261473,27,Hackney Central,London Overground
 Hackney Downs (Station),Hackney Downs (London Overground),/data/8912952,25,Hackney Downs,London Overground
@@ -351,6 +367,7 @@ Haggerston (Station),Haggerston (London Overground),/data/9261749,13,Haggerston,
 Hampstead Heath (Station),Hampstead Heath (London Overground),/data/9248944,5,Hampstead Heath,London Overground
 Harlesden (Station),Harlesden (London Overground),/data/9562969,0,Harlesden,London Overground
 Harringay Green Lanes (Station),Harringay Green Lanes (London Overground),/data/9261315,8,Harringay Green Lanes,London Overground
+Harrington Road (Tram Stop),Harrington Road (Tramlink),/data/9261260,1,Harrington Road,Tramlink
 Harrow & Wealdstone (Station),Harrow & Wealdstone (London Overground),/data/9010094,0,Harrow & Wealdstone,London Overground
 Hatch End (Station),Hatch End (London Overground),/data/9283872,6,Hatch End,London Overground
 Headstone Lane (Station),Headstone Lane (London Overground),/data/9281056,0,Headstone Lane,London Overground
@@ -365,20 +382,29 @@ Kensington Olympia (Station),Kensington Olympia (London Overground),/data/925329
 Kentish Town West (Station),Kentish Town West (London Overground),/data/9249127,4,Kentish Town West,London Overground
 Kenton (Station),Kenton (London Overground),/data/9267860,0,Kenton,London Overground
 Kilburn High Road (Station),Kilburn High Road (London Overground),/data/9248886,9,Kilburn High Road,London Overground
+King Henry's Drive (Tram Stop),King Henry's Drive (Tramlink),/data/9267749,1,King Henry's Drive,Tramlink
+Lebanon Road (Tram Stop),Lebanon Road (Tramlink),/data/9267927,2,Lebanon Road,Tramlink
 Leyton Midland Road (Station),Leyton Midland Road (London Overground),/data/9280882,5,Leyton Midland Road,London Overground
 Leytonstone High Road (Station),Leytonstone High Road (London Overground),/data/9490793,5,Leytonstone High Road,London Overground
 Liverpool Street (Station),Liverpool Street (London Overground),/data/7664144,417,Liverpool Street,London Overground
+Lloyd Park (Tram Stop),Lloyd Park (Tramlink),/data/9263584,2,Lloyd Park,Tramlink
 London Fields (Station),London Fields (London Overground),/data/6769038,7,London Fields,London Overground
+Mitcham (Tram Stop),Mitcham (Tramlink),/data/9254582,2,Mitcham,Tramlink
+Mitcham Junction (Tram Stop),Mitcham Junction (Tramlink),/data/9255047,4,Mitcham Junction,Tramlink
+New Addington (Tram Stop),New Addington (Tramlink),/data/9284144,2,New Addington,Tramlink
 New Cross (Station),New Cross (London Overground),/data/7683153,33,New Cross,London Overground
 New Cross Gate (Station),New Cross Gate (London Overground),/data/8915319,15,New Cross Gate,London Overground
 Norwood Junction (Station),Norwood Junction (London Overground),/data/8034359,24,Norwood Junction,London Overground
 Peckham Rye (Station),Peckham Rye (London Overground),/data/8087020,52,Peckham Rye,London Overground
 Penge West (Station),Penge West (London Overground),/data/8915258,6,Penge West,London Overground
+Phipps Bridge (Tram Stop),Phipps Bridge (Tramlink),/data/9255048,0,Phipps Bridge,Tramlink
 Queen's Road (Peckham) (Station),Queen's Road (Peckham) (London Overground),/data/8689996,14,Queen's Road,Peckham) (London Overground
 Rectory Road (Station),Rectory Road (London Overground),/data/7676821,5,Rectory Road,London Overground
+Reeves Corner (Tram Stop),Reeves Corner (Tramlink),/data/9267926,0,Reeves Corner,Tramlink
 Richmond (Station),Richmond (London Overground),/data/1676832,139,Richmond,London Overground
 Romford (Station),Romford (London Overground),/data/8059901,43,Romford,London Overground
 Rotherhithe (Station),Rotherhithe (London Overground),/data/8985884,2,Rotherhithe,London Overground
+Sandilands (Tram Stop),Sandilands (Tramlink),/data/9267922,3,Sandilands,Tramlink
 Seven Sisters (Station),Seven Sisters (London Overground),/data/7675729,3,Seven Sisters,London Overground
 Shepherd's Bush (Station),Shepherd's Bush (London Overground),/data/9253700,27,Shepherd's Bush,London Overground
 Shoreditch High Street (Station),Shoreditch High Street (London Overground),/data/6783540,16,Shoreditch High Street,London Overground
@@ -395,20 +421,26 @@ Stratford Railway (Station),Stratford Railway (London Overground),/data/9867839,
 Surrey Quays (Station),Surrey Quays (London Overground),/data/8089369,20,Surrey Quays,London Overground
 Sydenham (Station),Sydenham (London Overground),/data/8020294,10,Sydenham,London Overground
 Theobalds Grove (Station),Theobalds Grove (London Overground),/data/6415428,6,Theobalds Grove,London Overground
+Therapia Lane (Tram Stop),Therapia Lane (Tramlink),/data/9284137,4,Therapia Lane,Tramlink
 Turkey Street (Station),Turkey Street (London Overground),/data/6484249,2,Turkey Street,London Overground
 Upminster (Station),Upminster (London Overground),/data/8914759,63,Upminster,London Overground
 Upper Holloway (Station),Upper Holloway (London Overground),/data/9260219,6,Upper Holloway,London Overground
+Waddon Marsh (Tram Stop),Waddon Marsh (Tramlink),/data/9284139,5,Waddon Marsh,Tramlink
 Walthamstow Queens Road (Station),Walthamstow Queens Road (London Overground),/data/9283898,8,Walthamstow Queens Road,London Overground
+Wandle Park (Tram Stop),Wandle Park (Tramlink),/data/9284194,2,Wandle Park,Tramlink
 Wandsworth Road (Station),Wandsworth Road (London Overground),/data/8016282,2,Wandsworth Road,London Overground
 Wanstead Park (Station),Wanstead Park (London Overground),/data/9254890,10,Wanstead Park,London Overground
 Wapping (Station),Wapping (London Overground),/data/9249892,3,Wapping,London Overground
 Watford High Street (Station),Watford High Street (London Overground),/data/9529353,15,Watford High Street,London Overground
 Watford Junction (Station),Watford Junction (London Overground),/data/9529416,120,Watford Junction,London Overground
+Wellesley Road (Tram Stop),Wellesley Road (Tramlink),/data/9284142,1,Wellesley Road,Tramlink
 Wembley Central (Station),Wembley Central (London Overground),/data/9544838,19,Wembley Central,London Overground
 West Brompton (Station),West Brompton (London Overground),/data/6498351,12,West Brompton,London Overground
 West Croydon (Station),West Croydon (London Overground),/data/394168,52,West Croydon,London Overground
+West Croydon (Tram Stop),West Croydon (Tramlink),/data/9284141,4,West Croydon,Tramlink
 West Hampstead (Station),West Hampstead (London Overground),/data/9248968,19,West Hampstead,London Overground
 White Hart Lane (Station),White Hart Lane (London Overground),/data/8914193,16,White Hart Lane,London Overground
 Willesden Junction (Station),Willesden Junction (London Overground),/data/1391111,46,Willesden Junction,London Overground
 Wood Street (Station),Wood Street (London Overground),/data/8041841,12,Wood Street,London Overground
 Woodgrange Park (Station),Woodgrange Park (London Overground),/data/6812333,3,Woodgrange Park,London Overground
+Woodside (Tram Stop),Woodside (Tramlink),/data/9284135,2,Woodside,Tramlink
