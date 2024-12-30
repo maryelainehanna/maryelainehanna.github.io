@@ -1,0 +1,112 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Affordability of single journey fares in major transit cities",
+    "data": {
+      "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/fare_comparison.csv"
+    },
+    "title": {
+      "text": "Affordability of single journey fares in major transit cities",
+      "subtitle": [
+        "Size of circle represents size of network (miles of metro network and approx.", "number of buses in fleet)", "Sources: Data compiled from transit agencies", ""
+      ],
+      "subtitleFontStyle": "italic",
+      "subtitleFontSize": 10,
+      "anchor": "start",
+      "color": "black"
+    },
+    "height": 300,
+    "width": 300,
+  
+  
+    "mark": "circle",
+    "params": [
+      {
+        "name": "hover",
+        "select": {
+          "type": "point",
+          "fields": ["City"],
+          "on": "mouseover",
+          "clear": "mouseout"
+        }
+      },
+      {
+        "name": "Type",
+        "value": "Metro",
+        "bind": {
+          "input": "select",
+          "options": ["Metro", "Bus"],
+          "labels": ["Metro", "Bus"],
+          "name": "Transport Mode: "
+        }
+      }
+    ],
+    "transform": [
+      {"filter": "datum.Type === Type"},
+      {"filter": "datum['Percentage of min wage'] <= 150"},
+      {
+        "calculate": "datum.Type === 'Metro' ? format(datum['network miles (metro)/fleet vehicles (bus)'], ',') + ' miles' : format(datum['network miles (metro)/fleet vehicles (bus)'], ',') + ' vehicles in fleet'",
+        "as": "network_size_with_units"
+      },
+      {
+        "calculate": "'£' + format(datum['GBP Price'], '.2f')",
+        "as": "formatted_price"
+      }
+    ],
+    "encoding": {
+      "y": {
+        "field": "Percentage of min wage",
+        "type": "quantitative",
+        "scale": {"domain": [0, 150]},
+        "title": "Percentage of minimum wage"
+      },
+      "x": {
+        "field": "GBP Price",
+        "type": "quantitative",
+        "scale": {"domain": [0, 10]},
+        "title": "Max price of single fare (GBP)"
+      },
+      "color": {
+        "field": "Region",
+        "type": "nominal",
+        "title": "Region",
+        "legend": {"orient": "bottom", "columns": 4, "labelFontStyle": "italic"},
+    "scale": {
+      "domain": ["London", "Africa", "Asia & Oceania", "Europe", "Middle East", "North America", "South America"],
+      "range": ["#000000", "#9567bd", "#17becf", "#d62728", "#bcbd22", "#ff7f0e", "#2da02c"] 
+    }  },      
+      "size": {
+        "field": "network miles (metro)/fleet vehicles (bus)",
+        "type": "quantitative",
+        "title": "Size of network",
+        "condition": [{"test": {"param": "hover", "empty": false}, "value": 500}],
+        "scale": {
+          "range": [60, 400],
+          "domain": {"expr": "Type === 'Metro' ? [60, 500] : [0, 15000]"}
+        },
+        "legend": null
+      },
+      "opacity": {
+                "condition": {"param": "hover", "value": 0.8},
+                "value": 0.5
+              },
+      "tooltip": [
+        {"field": "City", "type": "nominal"},
+        {"field": "Network name", "type": "nominal"},
+        {
+          "field": "network_size_with_units",
+          "type": "nominal",
+          "title": "Network size"
+        },
+        {
+          "field": "Percentage of min wage",
+          "type": "quantitative",
+          "title": "Percentage of minimum wage"
+        },
+        {
+          "field": "formatted_price",
+          "type": "nominal",
+          "title": "Max price of single journey"
+        }
+      ]
+    }
+  }
