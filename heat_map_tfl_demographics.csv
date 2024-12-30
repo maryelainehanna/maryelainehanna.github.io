@@ -1,73 +1,73 @@
 ﻿Survey Category,Survey Question,Identity,Percent,Proportion
 Mode of Transport,Walking,All Londoners,95,0.95
 Mode of Transport,Bus,All Londoners,59,0.59
-Mode of Transport,Car (as a passenger),All Londoners,44,0.44
-Mode of Transport,Car (as a driver),All Londoners,38,0.38
+Mode of Transport,Car (as passenger),All Londoners,44,0.44
+Mode of Transport,Car (as driver),All Londoners,38,0.38
 Mode of Transport,Tube,All Londoners,41,0.41
 Mode of Transport,Cycling (used bike in the last 12 months),All Londoners,17,0.17
 Mode of Transport,Walking,White,95,0.95
 Mode of Transport,Bus,White,56,0.56
-Mode of Transport,Car (as a passenger),White,43,0.43
+Mode of Transport,Car (as passenger),White,43,0.43
 Mode of Transport,Car (as driver),White,41,0.41
 Mode of Transport,Tube,White,43,0.43
 Mode of Transport,Cycling (used bike in the last 12 months),White,18,0.18
 Mode of Transport,Walking,BAME,96,0.96
 Mode of Transport,Bus,BAME,65,0.65
-Mode of Transport,Car (as a passenger),BAME,46,0.46
+Mode of Transport,Car (as passenger),BAME,46,0.46
 Mode of Transport,Car (as driver),BAME,32,0.32
 Mode of Transport,Tube,BAME,37,0.37
 Mode of Transport,Cycling (used bike in the last 12 months),BAME,17,0.17
 Mode of Transport,Walking,Men,95,0.95
 Mode of Transport,Bus,Men,56,0.56
-Mode of Transport,Car (as a passenger),Men,37,0.37
+Mode of Transport,Car (as passenger),Men,37,0.37
 Mode of Transport,Car (as driver),Men,42,0.42
 Mode of Transport,Tube,Men,43,0.43
 Mode of Transport,Cycling (used bike in the last 12 months),Men,22,0.22
 Mode of Transport,Walking,Women,95,0.95
 Mode of Transport,Bus,Women,63,0.63
-Mode of Transport,Car (as a passenger),Women,51,0.51
+Mode of Transport,Car (as passenger),Women,51,0.51
 Mode of Transport,Car (as driver),Women,33,0.33
 Mode of Transport,Tube,Women,38,0.38
 Mode of Transport,Cycling (used bike in the last 12 months),Women,13,0.13
 Mode of Transport,Walking,Older People (65+),87,0.87
 Mode of Transport,Bus,Older People (65+),65,0.65
-Mode of Transport,Car (as a passenger),Older People (65+),41,0.41
+Mode of Transport,Car (as passenger),Older People (65+),41,0.41
 Mode of Transport,Car (as driver),Older People (65+),43,0.43
 Mode of Transport,Tube,Older People (65+),28,0.28
 Mode of Transport,Cycling (used bike in the last 12 months),Older People (65+),4,0.04
 Mode of Transport,Walking,Younger People (<25),97,0.97
 Mode of Transport,Bus,Younger People (<25),66,0.66
-Mode of Transport,Car (as a passenger),Younger People (<25),62,0.62
+Mode of Transport,Car (as passenger),Younger People (<25),62,0.62
 Mode of Transport,Car (as driver),Younger People (<25),7,0.07
 Mode of Transport,Tube,Younger People (<25),32,0.32
 Mode of Transport,Cycling (used bike in the last 12 months),Younger People (<25),17,0.17
 Mode of Transport,Walking,Disabled People,81,0.81
 Mode of Transport,Bus,Disabled People,58,0.58
-Mode of Transport,Car (as a passenger),Disabled People,42,0.42
+Mode of Transport,Car (as passenger),Disabled People,42,0.42
 Mode of Transport,Car (as driver),Disabled People,24,0.24
 Mode of Transport,Tube,Disabled People,21,0.21
 Mode of Transport,Cycling (used bike in the last 12 months),Disabled People,17,0.17
 Mode of Transport,Walking,Non-disabled People,96,0.96
 Mode of Transport,Bus,Non-disabled People,69,0.69
-Mode of Transport,Car (as a passenger),Non-disabled People,45,0.45
+Mode of Transport,Car (as passenger),Non-disabled People,45,0.45
 Mode of Transport,Car (as driver),Non-disabled People,39,0.39
 Mode of Transport,Tube,Non-disabled People,43,0.43
 Mode of Transport,Cycling (used bike in the last 12 months),Non-disabled People,18,0.18
 Mode of Transport,Walking,People on Lower Incomes,93,0.93
 Mode of Transport,Bus,People on Lower Incomes,69,0.69
-Mode of Transport,Car (as a passenger),People on Lower Incomes,38,0.38
+Mode of Transport,Car (as passenger),People on Lower Incomes,38,0.38
 Mode of Transport,Car (as driver),People on Lower Incomes,23,0.23
 Mode of Transport,Tube,People on Lower Incomes,32,0.32
 Mode of Transport,Cycling (used bike in the last 12 months),People on Lower Incomes,8,0.08
 Mode of Transport,Walking,Heterosexual Londoners,null,
 Mode of Transport,Bus,Heterosexual Londoners,null,
-Mode of Transport,Car (as a passenger),Heterosexual Londoners,null,
+Mode of Transport,Car (as passenger),Heterosexual Londoners,null,
 Mode of Transport,Car (as driver),Heterosexual Londoners,null,
 Mode of Transport,Tube,Heterosexual Londoners,null,
 Mode of Transport,Cycling (used bike in the last 12 months),Heterosexual Londoners,null,
 Mode of Transport,Walking,LGB Londoners,null,
 Mode of Transport,Bus,LGB Londoners,null,
-Mode of Transport,Car (as a passenger),LGB Londoners,null,
+Mode of Transport,Car (as passenger),LGB Londoners,null,
 Mode of Transport,Car (as driver),LGB Londoners,null,
 Mode of Transport,Tube,LGB Londoners,null,
 Mode of Transport,Cycling (used bike in the last 12 months),LGB Londoners,null,
