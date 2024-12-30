@@ -1,0 +1,225 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": { "text": "RPI - Average Prices", "subtitle": "Source: ONS" },
+  "vconcat": [
+    {
+      "hconcat": [
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/data_ONS-CHBF.json",
+            "format": { "property": "years" }
+          },
+          "title": "Housing",
+          "mark": { "type": "line", "color": "#53a60a" },
+          "encoding": {
+            "x": {
+              "field": "date",
+              "type": "temporal",
+              "axis": { "title": "", "grid": false }
+            },
+            "y": {
+              "field": "value",
+              "type": "quantitative",
+              "axis": {
+                "title": "",
+                "grid": false
+              }
+            }
+          }
+        },
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/data_ONS-CHBW.json",
+            "format": { "property": "years" }
+          },
+          "title": "Travel & Leisure",
+          "mark": { "type": "line", "color": "#53a60a" },
+          "encoding": {
+            "x": {
+              "field": "date",
+              "type": "temporal",
+              "axis": { "title": "", "grid": false }
+            },
+            "y": {
+              "field": "value",
+              "type": "quantitative",
+              "axis": {
+                "title": "",
+                "grid": false
+              }
+            }
+          }
+        },
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/data_ONS-CZMO.json",
+            "format": { "property": "years" }
+          },
+          "title": "Coal, per 50kg",
+          "mark": { "type": "line", "color": "#53a60a" },
+          "encoding": {
+            "x": {
+              "field": "date",
+              "type": "temporal",
+              "axis": { "title": "", "grid": false }
+            },
+            "y": {
+              "field": "value",
+              "type": "quantitative",
+              "axis": {
+                "title": "",
+                "grid": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "hconcat": [
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/data_ONS-CZNQ.json",
+            "format": { "property": "years" }
+          },
+          "title": "Tea Bags, per 250g",
+          "mark": { "type": "line", "color": "#53a60a" },
+          "encoding": {
+            "x": {
+              "field": "date",
+              "type": "temporal",
+              "axis": { "title": "", "grid": false }
+            },
+            "y": {
+              "field": "value",
+              "type": "quantitative",
+              "axis": {
+                "title": "",
+                "grid": false
+              }
+            }
+          }
+        },
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/data_ONS-D7CX.json",
+            "format": { "property": "years" }
+          },
+          "title": "Accommodation Services",
+          "mark": { "type": "line", "color": "#53a60a" },
+          "encoding": {
+            "x": {
+              "field": "date",
+              "type": "temporal",
+              "axis": { "title": "", "grid": false }
+            },
+            "y": {
+              "field": "value",
+              "type": "quantitative",
+              "axis": {
+                "title": "",
+                "grid": false
+              }
+            }
+          }
+        },
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/data_ONS-DOBE.json",
+            "format": { "property": "years" }
+          },
+          "title": "Catering: Restaurant Meals",
+          "mark": { "type": "line", "color": "#53a60a" },
+          "encoding": {
+            "x": {
+              "field": "date",
+              "type": "temporal",
+              "axis": { "title": "", "grid": false }
+            },
+            "y": {
+              "field": "value",
+              "type": "quantitative",
+              "axis": {
+                "title": "",
+                "grid": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "hconcat": [
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/data_ONS-DOBP.json",
+            "format": { "property": "years" }
+          },
+          "title": "Housing: Rent",
+          "mark": { "type": "line", "color": "#53a60a" },
+          "encoding": {
+            "x": {
+              "field": "date",
+              "type": "temporal",
+              "axis": { "title": "", "grid": false }
+            },
+            "y": {
+              "field": "value",
+              "type": "quantitative",
+              "axis": {
+                "title": "",
+                "grid": false
+              }
+            }
+          }
+        },
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/data_ONS-DOCG.json",
+            "format": { "property": "years" }
+          },
+          "title": "Household Services: Postage",
+          "mark": { "type": "line", "color": "#53a60a" },
+          "encoding": {
+            "x": {
+              "field": "date",
+              "type": "temporal",
+              "axis": { "title": "", "grid": false }
+            },
+            "y": {
+              "field": "value",
+              "type": "quantitative",
+              "axis": {
+                "title": "",
+                "grid": false
+              }
+            }
+          }
+        },
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/data_ONS-DODC.json",
+            "format": { "property": "years" }
+          },
+          "title": "Books & Newspapers",
+          "mark": { "type": "line", "color": "#53a60a" },
+          "encoding": {
+            "x": {
+              "field": "date",
+              "type": "temporal",
+              "axis": { "title": "", "grid": false }
+            },
+            "y": {
+              "field": "value",
+              "type": "quantitative",
+              "axis": {
+                "title": "",
+                "grid": false
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
