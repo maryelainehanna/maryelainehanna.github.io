@@ -1,118 +1,146 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "description": "Bar chart showing donations by party lean with donor breakdown.",
-    "data": {
-      "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/washingtonpost_CC4_chart2.json"
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Bar chart showing donations by party lean with donor breakdown.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/washingtonpost_CC4_chart2.json"
+  },
+  "padding": {"top": 10, "bottom": 10, "right": 10, "left": 15},
+  "transform": [
+    {
+      "calculate": "datum['Party Lean'] === 'Republican' ? 'Republican-leaning' : datum['Party Lean'] === 'Democrat' ? 'Democrat-leaning' : 'Supportive of both parties'",
+      "as": "CustomPartyLean"
     },
-    "transform": [
-      {
-        "calculate": "datum['Party Lean'] === 'Republican' ? 'Republican-leaning' : datum['Party Lean'] === 'Democrat' ? 'Democrat-leaning' : 'Supportive of both parties'",
-        "as": "CustomPartyLean"
-      },
-      {
-        "calculate": "datum['Donor Rank'] == 11 ? 'All Other Donors' : datum.Name", 
-        "as": "DisplayName"
-      },
-      {
-        "calculate": "datum['Donor Rank'] == 11 ? 'All Other Donors' : 'Top Donor ' + datum['Donor Rank']",
-        "as": "DonorCategory"
-      },
-      {
-        "calculate": "datum['Donor Rank'] == 11 ? '-' : datum.Occupation",
-        "as": "DisplayOccupation"
-      },
-      {
-        "aggregate": [{"op": "sum", "field": "Donations($M)", "as": "TotalDonations"}],
-        "groupby": ["CustomPartyLean", "DonorCategory", "DisplayName", "DisplayOccupation"]
-      }
+    {
+      "calculate": "datum['Donor Rank'] == 11 ? 'All Other Donors' : datum.Name",
+      "as": "DisplayName"
+    },
+    {
+      "calculate": "datum['Donor Rank'] == 11 ? 'All Other Donors' : 'Top Donor ' + datum['Donor Rank']",
+      "as": "DonorCategory"
+    },
+    {
+      "calculate": "datum['Donor Rank'] == 11 ? '-' : datum.Occupation",
+      "as": "DisplayOccupation"
+    },
+    {
+      "aggregate": [
+        {"op": "sum", "field": "Donations($M)", "as": "TotalDonations"}
+      ],
+      "groupby": [
+        "CustomPartyLean",
+        "DonorCategory",
+        "DisplayName",
+        "DisplayOccupation"
+      ]
+    },
+    {
+      "calculate": "'$' + format(datum.TotalDonations, '.1f') + 'M'",
+      "as": "DonationLabel"
+    }
+  ],
+  "title": {
+    "text": [
+      "Donations by top 50 individuals and organizations to committees that are mostly ..."
     ],
-    "title": {
-      "text": ["Donations by top 50 individuals and organizations to committees that are mostly ...", "(hover over bar to see top 10 donors)"],
-      "fontSize": 16,
-      "font": "sans-serif",
-      "fontWeight": "bolder"
-    },
-    "height": 200,
-    "width": 650,
-    "layer": [
-      {
-        "mark": {
-          "type": "bar",
-          "strokeWidth": 1,
-          "stroke": "white"
+    "subtitle": "(hover over bars to explore the top 10 donors)",
+    "fontSize": 16,
+    "font": "sans-serif",
+    "fontWeight": "bolder"
+  },
+  "height": 200,
+  "width": 650,
+  "layer": [
+    {
+      "mark": {"type": "bar", "strokeWidth": 1, "stroke": "white"},
+      "encoding": {
+        "y": {
+          "field": "CustomPartyLean",
+          "type": "nominal",
+          "axis": null,
+          "sort": [
+            "Republican-leaning",
+            "Democrat-leaning",
+            "Supportive of both parties"
+          ],
+          "scale": {"padding": 0.5, "band": 0.1}
         },
-        "encoding": {
-          "y": {
-            "field": "CustomPartyLean",
+        "x": {"field": "TotalDonations", "type": "quantitative", "axis": null},
+        "color": {
+          "field": "CustomPartyLean",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Republican-leaning",
+              "Democrat-leaning",
+              "Supportive of both parties"
+            ],
+            "range": ["#bc2c24", "#1366b3", "#595959"]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {"field": "DisplayName", "type": "nominal", "title": "Donor"},
+          {
+            "field": "DisplayOccupation",
             "type": "nominal",
-            "axis": null,
-            "sort": ["Republican-leaning", "Democrat-leaning", "Supportive of both parties"],
-            "scale": {"padding": 0.5, "band": 0.1}
+            "title": "Occupation"
           },
-          "x": {
-            "field": "TotalDonations",
-            "type": "quantitative",
-            "axis": null
-          },
-          "color": {
-            "field": "CustomPartyLean",
+          {
+            "field": "DonationLabel",
             "type": "nominal",
-            "scale": {
-              "domain": ["Republican-leaning", "Democrat-leaning", "Supportive of both parties"],
-              "range": ["#bc2c24", "#1366b3", "#595959"]
-            },
-            "legend": null
-          },
-          "tooltip": [
-            {"field": "DisplayName", "type": "nominal", "title": "Donor"},
-            {"field": "DisplayOccupation", "type": "nominal", "title": "Occupation"},
-            {"field": "TotalDonations", "type": "quantitative", "format": "$.2f", "title": "Donation Amount"}
+            "title": "Donation Amount"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": -325,
+        "dy": -25,
+        "fontSize": 16,
+        "fontWeight": "lighter",
+        "font": "sans-serif"
+      },
+      "encoding": {
+        "y": {
+          "field": "CustomPartyLean",
+          "type": "nominal",
+          "sort": [
+            "Republican-leaning",
+            "Democrat-leaning",
+            "Supportive of both parties"
+          ]
+        },
+        "text": {"field": "CustomPartyLean", "type": "nominal"}
+      }
+    },
+    {
+      "transform": [{"filter": "datum['Party Lean'] == 'Both'"}],
+      "mark": {
+        "type": "text",
+        "text": "<",
+        "font": "sans-serif",
+        "fontSize": 14,
+        "color": "#000000",
+        "dx": -160,
+        "dy": 0,
+        "baseline": "middle"
+      },
+      "encoding": {
+        "y": {
+          "field": "CustomPartyLean",
+          "type": "nominal",
+          "sort": [
+            "Republican-leaning",
+            "Democrat-leaning",
+            "Supportive of both parties"
           ]
         }
-      },
-      {
-        "mark": {
-          "type": "text",
-          "align": "left",
-          "baseline": "middle",
-          "dx": -325,
-          "dy": -25,
-          "font": "sans-serif",
-          "fontSize": 16
-        },
-        "encoding": {
-          "y": {
-            "field": "CustomPartyLean",
-            "type": "nominal",
-            "sort": ["Republican-leaning", "Democrat-leaning", "Supportive of both parties"]
-          },
-          "text": {"field": "CustomPartyLean", "type": "nominal"}
-        }
-      },
-      {
-        "transform": [{"filter": "datum['Party Lean'] == 'Both'"}],
-        "mark": {
-          "type": "text",
-          "text": "<",
-          "fontSize": 18,
-          "fontWeight": "lighter",
-          "font": "Gogoia",
-          "color": "#000000",
-          "dx": -160,
-          "dy": 0,
-          "baseline": "middle"
-        },
-        "encoding": {
-          "y": {
-            "field": "CustomPartyLean",
-            "type": "nominal",
-            "sort": ["Republican-leaning", "Democrat-leaning", "Supportive of both parties"]
-          }
-        }
       }
-    ],
-    "config": {
-      "view": {"stroke": null}
     }
-  }
-  
+  ],
+  "config": {"view": {"stroke": null}}
+}

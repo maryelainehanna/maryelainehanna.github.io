@@ -4,6 +4,7 @@
   "data": {
     "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/washingtonpost(2).json"
   },
+  "padding":{"top":10,"bottom":10, "right":10, "left":15},
   "transform": [
     {
       "calculate": "datum['Party Lean'] === 'Republican' ? 'Republican-leaning' : datum['Party Lean'] === 'Democrat' ? 'Democrat-leaning' : 'supportive of both parties'",
