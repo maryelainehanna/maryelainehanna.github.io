@@ -1,0 +1,227 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 400,
+    "height": 400,
+    "projection": {"type": "mercator"},
+    "title":{
+      "text":"How accessible are TfL's Santander bikes for Londoners without cars?",
+      "subtitle":"Sources: TfL, ONS (2021 Census)"
+    },
+    "padding":{"top":10, "left":10, "right":10},
+    "params": [
+      {
+        "name": "showTotalBikes",
+        "value": true,
+        "bind": {"input": "checkbox", "name": "Show Total Bikes: "}
+      },
+      {
+        "name": "showBusStops",
+        "value": false,
+        "bind": {"input": "checkbox", "name": "Show Bus Stops: "}
+      },
+      {
+        "name": "showUnderground",
+        "value": false,
+        "bind": {"input": "checkbox", "name": "Show Underground Stations: "}
+      },
+      {
+        "name": "showOverground",
+        "value": false,
+        "bind": {"input": "checkbox", "name": "Show Overground Stations: "}
+      },
+      {
+        "name": "showDLR",
+        "value": false,
+        "bind": {"input": "checkbox", "name": "Show DLR Stations: "}
+      },
+      {
+        "name": "showTramlink",
+        "value": false,
+        "bind": {"input": "checkbox", "name": "Show Tramlink Stations: "}
+      }
+    ],
+    "layer": [
+      {
+              "transform": [
+          {
+            "lookup": "properties.name",
+            "from": {
+              "data": {
+                "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/borough_car_ownership.csv"
+              },
+              "key": "Borough",
+              "fields": ["pct households without car"]
+            }
+          }
+        ],
+        "data": {
+          "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/main/london_421.topojson",
+          "format": {"type": "topojson", "feature": "london_421.geojson"}
+        },
+        "mark": {"type": "geoshape", 
+        "stroke": "white"
+        },
+        "encoding": {
+          "color": {
+            "field": "pct households without car",
+            "type": "quantitative",
+            "title": "Households Without Cars (%)",
+            "scale": {"scheme": "warmgreys"}
+          },
+          "tooltip": [
+            {"field": "properties.name", "type": "nominal", "title": "Borough"},
+            {
+              "field": "pct households without car",
+              "type": "quantitative",
+              "title": "Households Without Cars (%)"
+            }
+          ]
+      }
+      
+      },
+      {
+        "selection": {
+          "hover": {
+            "type": "single",
+            "on": "mouseover",
+            "empty": "none"
+          }
+        },
+        "data": {
+          "url": "https://api.tfl.gov.uk/BikePoint",
+          "format": {"type": "json"}
+        },
+        "transform": [
+          {"flatten": ["additionalProperties"]},
+          {
+            "filter": "datum.additionalProperties.key !== 'RemovalDate' || datum.additionalProperties.value === ''"
+          },
+          {"filter": "datum.additionalProperties.key === 'NbBikes'"},
+          {
+            "calculate": "parseFloat(datum.additionalProperties.value)",
+            "as": "BikeCount"
+          },
+          {"filter": "showTotalBikes"}
+        ],
+        "mark": {"type": "circle"},
+        "encoding": {
+          "longitude": {"field": "lon", "type": "quantitative"},
+          "latitude": {"field": "lat", "type": "quantitative"},
+          "size": {
+            "field": "BikeCount",
+            "type": "quantitative",
+            "title": "Total Bikes",
+            "scale": {"range": [10, 100]}
+          },
+          "opacity": {
+            "condition": {
+              "selection": "hover",
+              "value": 1
+            },
+            "value": 0.2
+          },
+          "color": {
+            "condition": {"selection": "hover", "value": "red"},
+            "value": "#cc3333"
+          },
+          "tooltip": [
+            {"field": "commonName", "type": "nominal", "title": "Docking Station"},
+            {"field": "BikeCount", "type": "quantitative", "title": "Total Bikes Docked"}
+          ]
+        }
+      },
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/490Stops_with_borough.csv"
+        },
+        "transform": [
+          {"filter": "showBusStops"}, {
+            "filter": "!(datum.CommonName === 'Holiday Inn T5' || datum.CommonName === 'Holiday Inn Express T5' )"
+          }
+        ],
+        "mark": {"type": "circle", "color": "#D01A1E", "size": 2},
+        "encoding": {
+          "longitude": {"field": "Longitude", "type": "quantitative"},
+          "latitude": {"field": "Latitude", "type": "quantitative"},
+          "tooltip": [
+            {"field": "CommonName", "type": "nominal", "title": "Bus Stop Name"}
+          ]
+        }
+      },
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/Stations_20180921.csv"
+        },
+        "transform": [
+          {"filter": "datum.NETWORK === 'London Underground'"},
+          {
+            "filter": "!(datum.NAME === 'Chesham' || datum.NAME === 'Amersham' || datum.NAME === 'Chalfont & Latimer' || datum.NAME === 'Chorleywood' || datum.NAME === 'Croxley' || datum.NAME === 'Moor Park' || datum.NAME === 'Watford' || datum.NAME === 'Watford Junction' || datum.NAME === 'Watford High Street' || datum.NAME === 'Bushey' || datum.NAME === 'Carpenders Park' || datum.NAME === 'Theobalds Grove' || datum.NAME === 'Cheshunt' || datum.NAME === 'Epping' || datum.NAME === 'Theydon Bois' || datum.NAME === 'Debden' || datum.NAME === 'Loughton' || datum.NAME === 'Buckhurst Hill' || datum.NAME === 'Roding Valley' || datum.NAME === 'Chigwell' || datum.NAME === 'Grange Hill' || datum.NAME === 'Rickmansworth')"
+          },
+          {"filter": "showUnderground"}
+        ],
+        "mark": {"type": "circle", "color": "#000099", "size": 20},
+        "encoding": {
+          "longitude": {"field": "x", "type": "quantitative"},
+          "latitude": {"field": "y", "type": "quantitative"},
+          "tooltip": [
+            {"field": "NAME", "type": "nominal", "title": "Underground Station"}
+          ]
+        }
+      },
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/Stations_20180921.csv"
+        },
+        "transform": [
+          {"filter": "datum.NETWORK === 'London Overground'"},
+          {
+            "filter": "!(datum.NAME === 'Chesham' || datum.NAME === 'Amersham' || datum.NAME === 'Chalfont & Latimer' || datum.NAME === 'Chorleywood' || datum.NAME === 'Croxley' || datum.NAME === 'Moor Park' || datum.NAME === 'Watford' || datum.NAME === 'Watford Junction' || datum.NAME === 'Watford High Street' || datum.NAME === 'Bushey' || datum.NAME === 'Carpenders Park' || datum.NAME === 'Theobalds Grove' || datum.NAME === 'Cheshunt' || datum.NAME === 'Epping' || datum.NAME === 'Theydon Bois' || datum.NAME === 'Debden' || datum.NAME === 'Loughton' || datum.NAME === 'Buckhurst Hill' || datum.NAME === 'Roding Valley' || datum.NAME === 'Chigwell' || datum.NAME === 'Grange Hill' || datum.NAME === 'Rickmansworth')"
+          },
+          {"filter": "showOverground"}
+        ],
+        "mark": {"type": "circle", "color": "#EE7C0E", "size": 20},
+        "encoding": {
+          "longitude": {"field": "x", "type": "quantitative"},
+          "latitude": {"field": "y", "type": "quantitative"},
+          "tooltip": [
+            {"field": "NAME", "type": "nominal", "title": "Overground Station"}
+          ]
+        }
+      },
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/Stations_20180921.csv"
+        },
+        "transform": [
+          {"filter": "datum.NETWORK === 'DLR'"},
+          {"filter": "showDLR"}
+        ],
+        "mark": {"type": "circle", "color": "#00A4A7", "size": 20},
+        "encoding": {
+          "longitude": {"field": "x", "type": "quantitative"},
+          "latitude": {"field": "y", "type": "quantitative"},
+          "tooltip": [
+            {"field": "NAME", "type": "nominal", "title": "DLR Station"}
+          ]
+        }
+      },
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/Stations_20180921.csv"
+        },
+        "transform": [
+          {"filter": "datum.NETWORK === 'Tramlink'"},
+          {"filter": "showTramlink"}
+        ],
+        "mark": {"type": "circle", "color": "#84B817", "size": 20},
+        "encoding": {
+          "longitude": {"field": "x", "type": "quantitative"},
+          "latitude": {"field": "y", "type": "quantitative"},
+          "tooltip": [
+            {"field": "NAME", "type": "nominal", "title": "Tramlink Station"}
+          ]
+        }
+      }
+    ]
+  }
+  
