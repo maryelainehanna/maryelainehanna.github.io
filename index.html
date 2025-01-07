@@ -1,65 +1,269 @@
 <!DOCTYPE html>
 <html> 
 <head>    
-    <!-- The head tag links to resources our page needs and defines information about it. Tags in the <head> aren't displayed on the page. -->
-
-    <!-- This is a link to a stylesheet which contains rules about how each element on the page should be defined-->
-    <!-- Try swapping example1.css to another, and take a look at example1.css to see if you understand it-->
-    <link rel="stylesheet" type="text/css" href="Example3.css">
-    <title>Mary Hanna | Home</title> <!-- The title displayed in the browser tab, not on the page itself -->
-
-    <!-- This is a link to the vega-lite which we're using to make graphs -->
+    <link rel="stylesheet" type="text/css" href="project_styling.css">
+    <title>Mary Hanna | Home</title> 
+    <link rel="icon" href="favicon.png" type="image/png">
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-
     <style>
         #chartGrid {
             display: flex;
         }
-        
     </style>
 </head>
 
 
-    <body> 
-        <h1 class="big" style="margin-bottom: 0px;">Mary Hanna's Website</h1>
-        <p style="margin-top: 0px; color: rgb(53, 74, 10)">
-            Mary Hanna | <a href="https://www.linkedin.com/in/maryelainehanna/">LinkedIn</a> | 
-            <a href="https://www.github.com/maryelainehanna">GitHub</a> | 
-            <a href="mary_hanna_portfolio.html">Portfolio</a>
-        </p>
-        <h3 class="small">This page is where Mary will put her project.</h3>
+
+<body>  
+    <div class="loader-container">
+        <div class="loader"></div>
+    </div>
+
+    <div id="scroll-progress"></div>
+
+    <button id="backToTop" onclick="scrollToTop()">Back to top</button>
+
     
-    
+    <h1 class="big" style="margin-bottom: 0px;">Mary Hanna's PP434 Project</h1>
+        <h2 style="margin-top: 0px; color: rgb(255, 255, 255)">
+            <a href="https://www.github.com/maryelainehanna" style="color: #ffffff; text-decoration: none;">
+                <img src="github-mark-white.png" alt="GitHub Logo" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">
+                GitHub</a> | <a href="mary_hanna_portfolio.html">Portfolio</a>
+        </h2>    
+
         <section>
-            <div class="chart-description">
-                <h2>Mary's Project</h2>
-                <h3>A map of station crime in the TfL Network.</h3>
-                <p>Explanation of what I did. Note to self: unassigned bus stops?</p>
-                <figure id="Location1"></figure>
-            </div>
+        <h2>How safe, reliable, and accessible are Transport for London (TfL)'s services?</h2>
+            <h3>Introduction</h3>
+                <p>The aim of this project is to examine the safety, reliability, and accessibility of the Transport for London (TfL) network. As one of the world's largest transit systems, 
+                    TfL bears a great responsibility to connect Londoners and visitors alike to the UK's capital. While safety, reliability, and accessibility can be analysed through a 
+                    variety of measures, this project presents a view on crime, affordability, transit delays, network coverage, and passenger perceptions and experiences. </p>       
+        </section>
+
+
+        <section>
+        <h2>Are TfL stations safe?</h2>
+            <h3>A map of station crime in the TfL network</h3>
+            <p>Chart 1 is a point map of crime at TfL stations in 2023-2024 as reported by the British Transport Police (BTP). 
+                This visualisation was created by scraping the British Transport Police's list of UK stations to parse out the TfL underground, overground, DLR, and Tramlink stations. 
+                These were then matched with TfL's available station data.  </p>
+                <div class="chart-description">
+                    <figure id="Location1"></figure>
+                </div>
+            <h3>Data & Challenges</h3>
+                <p><a href="https://crimemaps.btp.police.uk/station_list">British Transport Police's list</a> did not have all TfL stations* within their list, so some are left out of the map. Because the listed
+                included UK-wide stations and used a certain naming convention for each type, I used Python code to clean and match the data with TfL's list of stations.
+                The <a href="https://tfl.gov.uk/corporate/transparency/freedom-of-information/foi-request-detail?referenceId=FOI-1451-1819">TfL station data csv</a> was last updated in 2018, meaning certain stations which opened after this date, such as Nine Elms, were not listed and needed to be included to match up with the BTP list. 
+                My <a href="https://github.com/maryelainehanna/maryelainehanna.github.io/blob/main/Scraping_TfL_Crime.ipynb">Jupyter notebook </a>explains in-depth the process I took to correct errors in matching. </p>
+                <p></p>
+                <p><i>*British Transport Police did not have crime info for the following TfL stations:  Stratford High Street (DLR), Mile End (LU), 
+                Rickmansworth (LU), Stockwell (LU), South Wimbledon (LU). 
+                We cannot assume their exclusion is due to station crime being 0, as British Transport Police includes data for other stations with 0 crime.</i></p>
         </section>
     
+
+        <section>
+            <h2>Stuck on the tube?</h2>
+            <h3>A visualisation of lost customer hours on the tube</h3>
+            <p>Chart 2 presents TfL's data on "lost customer hours," a measure of customer 
+                experience of reliability. These estimates capture the impact of service 
+                disruptions on the underground lines. According to TfL, lost customer hour 
+                values are influenced by the day of the week, the time of day, the location of the delay, the direction of travel, and the duration of the incident. </p>
+            <div class="chart-description">
+                <p><i>Note: This visualisation is interactive. Click on the legend to highlight the underground line you are interested in viewing.</i></p>
+                <figure id="Location2"></figure>
+            </div>
+            <p>Since 2016, lost customer hours increased to a peak in 2019, with the Central line consistently hosting 
+                the most hours lost. However, the Covid-19 pandemic 
+                and the halting of normal movement made it difficult for 
+                TfL to capture this data past 2020, as demand assumptions no longer held up. </p>
+        <h3>Data & Challenges</h3>
+            <p><a href="https://tfl.gov.uk/corporate/publications-and-reports/underground-services-performance#:~:text=Lost%20Customer%20Hours%20is%20used,time%20lost%20by%20our%20customers.">TfL's lost customer hours data</a> only show lost customer hours for underground lines – and not all underground 
+                lines are included. As TfL works toward recovering passenger demand post-Covid, TfL should begin collecting 
+                and publishing this data again, particularly after the opening of new lines and extensions.</p>
+
+        </section>
+
+        <section>
+            <h2>What about other cities?</h2>
+            <h3>A visualisation of the relative affordability of London underground and bus services</h3>
+                <p>This analytic chart presents a comparison of the maximum price of single journey fares in major transit cities as of December 2024 
+                versus what percentage of the local hourly minimum wage this fare represents. Maximum prices include the furthest possible journey, 
+                in the case of systems which have distance-based fares (not including special fares such as airport journeys). </p>    
+            <div class="chart-description">
+                <figure id="Location3"></figure>
+                <p><i>Note: Cities directly on the x-axis have no legal minimum wage.</i></p>
+            </div>
+            <p>London (shown in <b>black</b> for easy comparison) has quite an unaffordable maximum underground fare, representing more than 
+                half of the London hourly minimum wage. 
+                In contrast, TfL's bus network – which is not distance-based – is relatively affordable (currently costing £1.75).</p>
+            <h3>Data & Challenges</h3>
+            <p>The data presented is self-compiled, as no one data source provided this information. Therefore, many transit 
+                agencies serve as the data sources. Due to frequent changes in transit pricing, these data points may become 
+                outdated soon, posing a threat to and heavy burden for replicability. Additionally, the conversion of global fares to GBP 
+                was done under currency exchange rates of late-December 2024. To compare sizes of networks, I chose to look at <a href="https://en.wikipedia.org/wiki/List_of_metro_systems">system length of metros</a>. However, 
+                bus networks were more difficult to compare, as some transit agencies provide square-mileage covered, while others 
+                provide data on length of routes themselves. To provide a more accurate view of bus network size, I turned to vehicle
+                fleet size, though these numbers may not provide an accurate view of how comprehensive the network operations are.</p>
+        </section>
+
+        <section>
+            <h2>What do Londoners think?</h2>
+            <h3>A visualisation of TfL passenger survey responses</h3>
+                <p>This heat map compiles demographic data on Londoners' travel behaviours from TfL's travel demand survey. Key sections include the barriers to use of public 
+                    transport as well as safety experiences and perceptions, shedding light on which reliability, 
+                    safety, and accessibility issues are most severe for certain groups of people.</p>
+                <div class="chart-description">
+                    <p><i>Note: This visualisation is interactive. Use the dropdown boxes to explore different parts of the survey data. BAME refers to "Black,
+                    Asian, and minority ethnic" communities. LGB refers
+                    to "lesbian, gay, and bisexual" people.</i></p>
+                    <figure id="Location4"></figure>
+                </div>
+            <h3>Data & Challenges</h3>
+                <p>Source is TfL's <a href="https://content.tfl.gov.uk/travel-in-london-understanding-our-diverse-communities-2019.pdf">Travel in London: 
+                Understanding our diverse communities 2019</a> report. The report misses some data points for certain groups (e.g. the barriers to travel for 
+                people on lower incomes) -- represented by greyed-out boxes. </p>
+        </section>
+
+        <section>
+            <h2>Prefer to cycle?</h2>
+            <h3>A map of TfL bikes scattered throughout London</h3>
+                <p>TfL's network is not limited to buses and trains; Santander bikes offer Londoners an easy, cost-effective, and 
+                    more autonomous mode of travel. This choropleth displays the percentage of households within each borough who 
+                    do not have access to a car or van and is overlayed with 
+                    a point map showing the locations of Santander bike docks throughout London. </p>
+            <div class="chart-description">
+                <p><i>Note: This visualisation is interactive. Use the checkboxes to see the
+                extent of TfL's network, where bike docks don't reach.</i></p>
+                <figure id="Location5"></figure>
+            </div>
+            <h3>Data & Challenges</h3>
+                <p>This chart is fed by <a href="https://api.tfl.gov.uk/">TfL's REST API</a>, which produces 
+                    near-real time data about the bikes docked at bike points throughout London. 
+                    Bus stops locations are provided by the <a href="https://beta-naptan.dft.gov.uk/download/la">Department for Transport (DfT)</a>.
+                    Station locations could not be extracted from DfT, as their dataset included non-London stations and was missing the NaPTAN codes necessary to
+                    isolate TfL stations from other UK stations. Therefore, station data was retrieved from <a href="https://tfl.gov.uk/corporate/transparency/freedom-of-information/foi-request-detail?referenceId=FOI-1451-1819">TfL</a>. </p>
+        </section>
+
+        <section>
+            <h2></h2>
+            <h3>Conclusion</h3>
+            <p>Transport for London clearly offers a comprehensive network covering the nation’s capital, 
+                though cost and overcrowding pose barriers to higher usage of TfL services. Though the underground 
+                fare can be a costly barrier for many passengers, TfL’s expansive bus network can be accessed through
+                 a relatively low fare, making passengers appreciate its value for money over that of the tube. As expected, central London hosts the 
+                 largest number of station crimes – likely due to its high traffic and tourist vulnerability 
+                 – with some high-crime stations scattered throughout the outskirts. However, safety and
+                perceptions of safety on the network itself varies, with groups like women, BAME passengers, and disabled 
+                people much more worried about their personal safety on public transport,
+                 even experiencing hate crimes and sexual behaviour. Nonetheless, the collection of this data may point to TfL's willingness
+                 to constantly improve passenger experiences throughout London and can help us understand just how safe, reliable, 
+                 and accessible TfL's services truly are.</p> 
+        </section>
+
+
+
 <script>
     // let project_1_spec ="project_1_buses.json";
     let project_1_spec = "CC5_and_project_1.json"
+    let project_2_spec = "project_2_chart.json"
+    let project_3_spec = "project_3_chart.json"
+    let project_4_spec = "project_4_chart.json"
+    let project_5_spec = "project_5_chart.json"
 
     vegaEmbed('#Location1', project_1_spec)
+    vegaEmbed('#Location2', project_2_spec)
+    vegaEmbed('#Location3', project_3_spec)
+    vegaEmbed('#Location4', project_4_spec)
+    vegaEmbed('#Location5', project_5_spec)
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        setTimeout(function () {
+            // Hide the loader after 3 seconds
+            document.querySelector('.loader-container').style.display = 'none';
+        }, 3000); // 3 seconds delay
+    });
+</script>
+    
 
 
+
+<script>
+// Underground line colors for scroll progress bar
+const gradientColors = [
+  { color: "#D799AF", percentage: 15 }, // Hammersmith & City line color
+  { color: "#751056", percentage: 40 }, // Metropolitan line color
+  { color: "#0019A8", percentage: 65 }, // Piccadilly line color
+  { color: "#00A0E2", percentage: 100 } // Victoria line color
+]; 
+
+window.addEventListener("scroll", function () {
+  const scrollTop = window.scrollY;
+  const docHeight = document.body.scrollHeight - window.innerHeight;
+  const scrollPercent = (scrollTop / docHeight) * 100;
+
+  const progressBar = document.getElementById("scroll-progress");
+  let gradient = gradientColors
+    .filter(entry => scrollPercent >= entry.percentage)
+    .map(entry => `${entry.color} ${entry.percentage}%`)
+    .join(", ");
+
+  progressBar.style.background = `linear-gradient(to right, ${gradient})`;
+  progressBar.style.width = scrollPercent + "%";
+});
 </script>
 
 
-<!-- 
-        // Do you want to add more graphs?
-        // try defining a new variable for figure_3_spec, adding VegaEmbed for Location3, and adding a new section in the HTML
-        // e.g. 
-        // let figure_3_spec = ...
-        // vegaEmbed('#Location3', figure_3_spec) -->
+<script>
+    window.addEventListener("scroll", function () {
+        // Calculate the scroll percentage
+        const scrollTop = window.scrollY; // How far the user has scrolled
+        const docHeight = document.body.scrollHeight - window.innerHeight; // Total scrollable height
+        const scrollPercent = (scrollTop / docHeight) * 100;
+
+        // Update the progress bar width
+        const progressBar = document.getElementById("scroll-progress");
+        progressBar.style.width = scrollPercent + "%";
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Add the 'no-scroll' class to the body when the loader is active
+        document.body.classList.add('no-scroll');
+
+        // Remove the loader after 3 seconds and re-enable scrolling
+        setTimeout(function () {
+            document.querySelector('.loader-container').style.display = 'none';
+            document.body.classList.remove('no-scroll'); // Re-enable scrolling
+        }, 3000); // 3 seconds delay
+    });
+</script>
 
 
-    </script>
+<script>
+// Show the 'back to top' button after scrolling 100px down
+window.addEventListener("scroll", function () {
+    const button = document.getElementById("backToTop");
+    if (window.scrollY > 100) {
+        button.classList.add("show");
+    } else {
+        button.classList.remove("show");
+    }
+});
+
+// Scroll smoothly to the top when the 'back to top' button is clicked
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+</script>
 
 </body>
     

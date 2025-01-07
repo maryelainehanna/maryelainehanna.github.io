@@ -2,9 +2,9 @@
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="Example3.css">
-    <title>Mary Hanna | Portfolio</title> <!-- The title displayed in the browser tab, not on the page itself -->
-    <!-- This is a link to the vega-lite which we're using to make graphs -->
+    <link rel="stylesheet" type="text/css" href="project_styling.css">
+    <title>Mary Hanna | Portfolio</title> 
+    <link rel="icon" href="favicon.png" type="image/png">
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
@@ -16,176 +16,206 @@
 </head>
 
 <body>
-    <!-- The body tag contains the elements that visitors to our page will see. -->
+
+    <div class="loader-container">
+        <div class="loader"></div>
+    </div>
+
+    <div id="scroll-progress"></div>
+
+    <button id="backToTop" onclick="scrollToTop()">Back to top</button>
+
+
     <h1 class="big" style="margin-bottom: 0px;">
-        <!-- We have added a class to the header called "big" which we can use to style it in the CSS -->
-        <!-- This is a header, it is the largest text on the page -->
         Mary Hanna's Portfolio
     </h1>
-    <p style="margin-top: 0px; color: darkblue">
-        <!-- we're setting the margin to 0px so the header and author name are close together -->
-        Mary Hanna | <a href="https://www.linkedin.com/in/maryelainehanna/">LinkedIn</a> | <a
-            href="https://www.github.com/maryelainehanna">GitHub</a>
-        | <a href="index.html">Home</a>
-    </p>
-    <h3 class="small">
-        <!-- We have added a class to the header called "small" which we can use to style it in the CSS -->
-        This page acts as your portfolio of charts. You can use it as a good starting point to display your work but
-        make sure to customise it to make it your own, or even start from scratch.
-    </h3>
-
-<h2><a href="#section1">CC1</a> | <a href="#section2">CC2</a> | <a href="#section3">CC3</a> | <a href="#section4">CC4</a> | <a href="#section5">CC5</a> | <a href="#section6">CC6</a> | <a href="#section7">CC7</a> | <a href="#section8">CC8</a> | <a href="#section9">CC9</a></h2>
-
-    <!-- We're organising the page into sections, with each section containing a chart, title and a description -->
-    <!-- CODING CHALLENGE 1 -->
-    <section>
-        <div class="chart-description">
-            <h2 id="section1">CC1 - Hosting. Display charts in your own site.</h2>
-            <h3>Chart 1</h3>
-            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                Mary will change the paragraph here to be more relevant.
-            </p>
-        </div>
-        <figure id="Location1"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-    </section>
-    <!-- making section 2 -->
-    <section>
-        <div class="chart-description">
-            <h3>Chart 2</h3>
-                <p>Same thing here.</p>
-        </div>
-        <figure id="Location2"></figure>
-    </section>
-
-    <!-- CODING CHALLENGE 2-->
-    <section>
-        <div class="chart description">
-            <h2 id="section2">CC2 - Building. Create your own visualisations.</h2>
-            <h3>Week 2, Chart 1</h3>
-            <p>A chart of internal displacement in the DRC.</p>
-        </div>
-        <figure id="Location6"></figure>
-    </section>
-    <section>
-        <div class="chart-description">
-        <h3>Week 2, Chart 2</h3>
-        <p>A chart of exports from the DRC.</p>
-        </div>
-        <figure id="Location7"></figure>
-    </section>
-
-    <section>
-        <div class="chart description">
-            <h2 id="section3">CC3 - Debating. Use a visualisation in economic/policy commentary. </h2>
-            <h3>Week 3, Chart 1</h3>
-            <p>Topic:</p>
-            <p>Comment:</p>
-            <figure id="Location8"></figure>
-            <h3>Week 3, Chart 2</h3>
-            <p>Topic:</p>
-            <p>Comment:</p>
-            <figure id="Location9"></figure>
-        </div>
-    </section>
+    <h2 style="margin-top: 0px; color: rgb(255, 255, 255)">
+        <a href="https://www.github.com/maryelainehanna" style="color: #ffffff; text-decoration: none;">
+            <img src="github-mark-white.png" alt="GitHub Logo" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">
+            GitHub
+        </a> | <a href="index.html">Home (Project)</a>
+    </h2>
 
 
     <section>
-        <div class="chart description">
-            <h2 id="section4">CC4 - Replication. Re-create, then improve, someone else's chart. </h2>
-            <h3>The original chart</h3>
-            <p>This chart came from a Washington Post article, "Meet the megadonors pumping over $2.5 billion into the election."</p>
-            <img src="WashingtonPostChart.png" alt="Image of chart from Washington Post article">
-            <h3>Week 4, Chart 1</h3>
-            <p>I scraped the table of data found on this <a href="https://www.washingtonpost.com/elections/interactive/2024/biggest-campaign-donors-election-2024/">online article</a> and attempted to create my own recreation of the chart.</p>
-            <p>Comment:</p>
-            <figure id="Location10"></figure>
-            <h3>Week 4, Chart 2</h3>
-            <p>Topic:</p>
-            <p>Comment:</p>
-            <figure id="Location11"></figure>
-        </div>
-    </section>
-
-    <section>
-        <div class="chart description">
-            <h2 id="section5">CC5 - Scraper. Implement a data scraper of your own. </h2>
-            <h3>Coming soon</h3>
-            <p>Description of what I did.</p>
-            <p>Comment:</p>
-            <figure id="Location16"></figure>
-        </div>
+        <h2 style="text-align: center;">
+            <a href="#section1">CC1</a> | <a href="#section2">CC2</a> | <a href="#section3">CC3</a> | 
+            <a href="#section4">CC4</a> | <a href="#section5">CC5</a> | <a href="#section6">CC6</a> | 
+            <a href="#section7">CC7</a> | <a href="#section8">CC8</a> | <a href="#section9">CC9</a> | 
+            <a href="#section10">CC10</a>
+        </h2>
     </section>
 
 
-    <section>
-        <div class="chart description">
-            <h2 id="section6">CC6 - Loops. Build a dashboard. </h2>
-            <h3>Coming soon</h3>
-            <p>Description of what I did.</p>
-            <p>Comment:</p>
-            <figure id="Location14"></figure>
-        </div>
+    <section class="two-column">
+        <h2 id="section1">CC1 - Hosting. Display charts in your own site.</h2>
+            <div class="column-container">
+                <div class="column">
+                    <div class="chart-description">
+                        <h3>Chart 1</h3>
+                        <figure id="Location1"></figure> 
+                    </div>
+            </div>
+                <div class="column">
+                    <div class="chart-description">
+                        <h3>Chart 2</h3>
+                        <figure id="Location2"></figure>
+                    </div>
+                </div>
+            </div>
     </section>
 
 
-    <section>
-        <div class="chart description">
-            <h2 id="section7">CC7 - Maps. Base maps and choropleths. </h2>
-            <h3>A base map of London boroughs</h3>
-            <p>Description of what I did.</p>
-            <p>Comment:</p>
-            <figure id="Location12"></figure>
-            <h3>A choropleth of London</h3>
-            <p>Description of what I did.</p>
-            <p>Comment:</p>
-            <figure id="Location13"></figure>
-            <p><a href=https://data.london.gov.uk/dataset/home-school-distance>Source</a> for future reference.</p>
+<section class="two-column">
+    <h2 id="section2" class="section-header">
+    CC2 - Building. Create your own visualisations.</h2>
+        <div class="column-container">
+            <div class="column">
+                <div class="chart-description">
+                    <h3>Chart 1</h3>
+                    <p>A chart of internal displacement in the DRC.</p>
+                    <figure id="Location6"></figure>
+                </div>
+            </div>
+            <div class="column">
+                <div class="chart-description">
+                    <h3>Chart 2</h3>
+                    <p>A chart of exports from the DRC.</p>
+                    <figure id="Location7"></figure>
+                </div>
+            </div>
         </div>
-    </section>
-
-
-    <section></section>
-        <div class="chart description">
-            <h2 id="section8">CC8 - Analytics charts. </h2>
-            <h3></h3>
-            <p>Description of what I did.</p>
-            <p>Comment:</p>
-            <figure id=""></figure>
-            <h3></h3>
-            <p>Description of what I did.</p>
-            <p>Comment:</p>
-            <figure id=""></figure>
-            <p></p>
-        </div>
-    </section>
-
-    <section></section>
-    <div class="chart description">
-        <h2 id="section9">CC9 - Big Data. Extracting a story from millions of prices. </h2>
-        <h3>The first chart</h3>
-        <p>Description of what I did.</p>
-        <p>Comment:</p>
-        <figure id="Location15"></figure>
-        <h3>The second chart</h3>
-        <p>Description of what I did.</p>
-        <p>Comment:</p>
-        <figure id=""></figure>
-        <p></p>
-    </div>
 </section>
 
-    <!-- Do you want to add more sections? -->
-    <!-- Try copying pasting the section above -->
-    <!-- You'll need to change the id of the figure "<figure id="Location3"... -->
-    <!-- ... and add a new variable for the graph spec in the script at the bottom of the page -->
 
-    <!-- This is a script, it's a way to run JavaScript code on the page -->
+<section class="two-column">
+    <h2 id="section3">CC3 - Debating. Use a visualisation in economic/policy commentary. </h2>
+        <p>2024's Festival of Economics featured the discussion, "The kids aren’t alright: Tackling a legacy of child poverty, 
+        bad diets and poor health." This topic inspired me to explore a key part of children's health - mental health.</p>    
+                <div class="chart-description">
+                    <h3>Chart 1</h3>
+                    <figure id="Location8"></figure>
+                </div>
+                <div class="chart-description">
+                    <h3>Chart 2</h3>
+                    <figure id="Location9"></figure>
+                </div> 
+        <p>The kids are indeed not alright, with probable mental health disorders increasing in England since 2017, experiences which tend to coincide with major family hardship.</p>
+</section>
+            
+
+<section class="two-column">
+    <h2 id="section4">CC4 - Replication. Re-create, then improve, someone else's chart. </h2>
+        <p>I scraped the data found on <a href="https://www.washingtonpost.com/elections/interactive/2024/biggest-campaign-donors-election-2024/">this Washington Post article</a> and replicated the original visualisation.
+             My new chart disaggregates donor info, explorable through tooltip.</p>    
+        <div class="chart-description">
+            <h3>The original chart</h3>
+                <img src="WashingtonPostChart.png" alt="Image of chart from Washington Post article">
+        <div class="chart-description">
+            <h3>Chart 1</h3>
+                <figure id="Location10"></figure>
+        </div>
+        <div class="chart-description">
+            <h3>Chart 2</h3>
+                <figure id="Location11"></figure>
+        </div>
+    </section>
+
+<section class="two-column">
+        <h2 id="section5">CC5 - Scraper. Implement a data scraper of your own. </h2>
+        <p>I scraped the British Transport Police’s <a href = "https://crimemaps.btp.police.uk/station_list">list of stations </a> to retrieve crime data (specifically in TfL stations). 
+        I chose this site for its relevance to my project.</p>
+        <p><a href="https://github.com/maryelainehanna/maryelainehanna.github.io/blob/main/Scraping_TfL_Crime.ipynb">Jupyter notebook (step-by-step explanations).</a> <a href="https://colab.research.google.com/drive/1abKnX1xScFli6c2jBtYfBMJ6zV9LoGsp?usp=sharing">Colab notebook.</a></p>
+        <div class="chart-description">
+            <figure id="Location16"></figure>
+        </div>
+</section>
+
+
+<section class="two-column">
+    <h2 id="section6">CC6 - Loops. Build a dashboard. </h2>
+        <div class="chart description">
+            <p><a href="https://colab.research.google.com/drive/1Sn8lg_6da37Iw4myDEPxynmAZ9wp84Wq?usp=sharing">Colab notebook.</a></p>
+            <figure id="Location14"></figure>
+        </div>
+</section>
+
+
+<section class="two-column">
+    <h2 id="section7">CC7 - Maps. Base maps and choropleths. </h2>
+        <div class = "column-container">
+            <div class="column">
+                <div class="chart description">
+                    <h3>Chart 1</h3>
+                    <figure id="Location12"></figure>
+                </div>
+            </div>
+            <div class="column">
+                <div class="chart description">
+                    <h3>Chart 2</h3>
+                    <figure id="Location13"></figure>
+                </div>
+            </div>
+        </div>
+        <p>Map 1 is a base map of London boroughs. Map 2 shows the percentage of households throughout all London borough without access
+            to a car or van (source: ONS, 2021 UK Census).</p>
+</section>
+
+
+<section class="two-column">
+    <h2 id="section8">CC8 - Analytics charts. </h2>
+        <div class="chart description">
+            <h3>Chart 1</h3>
+            <figure id="Location18"></figure>
+        </div>
+        <div class="chart description">
+            <h3>Chart 2</h3>
+            <figure id="Location20"></figure>
+        </div>
+</section>
+
+<section class="two-column">
+    <h2 id="section9">CC9 - Big data. Extracting a story from millions of prices. </h2>
+        <div class="column-container">
+            <p>These two charts utilize ONS microdata via Davies (2021) to track the median yearly prices of two personal health items in the UK – tampons and vitamins. The price data was 1) merged with region data and then filtered for the target items and their median prices.</p>
+            <div class="column">
+                <div class="chart description">
+                    <h3>Chart 1</h3>
+                    <figure id="Location15"></figure>
+                </div>
+            </div>
+            <div class="column">
+                <div class="chart description">
+                    <h3>Chart 2</h3>
+                    <figure id="Location19"></figure>
+                </div>
+            </div>
+        </div>
+</section>
+
+
+<section class="two-column">
+    <h2 id="section10">CC10 - Interactive visualisations. </h2>
+        <div class="chart-description">
+            <h3>Chart 1</h3>
+                <p>Interactive element: click on legend to isolate underground lines.</p>
+                <figure id="Location17"></figure>
+        </div>
+        <div class="chart-description">
+            <h3>Chart 2</h3>
+                <p>Interactive element: use the checkboxes to see extent of TfL's network. 
+                Hover over bike dock points for bike totals. Hover over stations/bus stops for names.</p>
+                <figure id="Location21"></figure>
+        </div>
+</section>
+
+
+<!-- This is a script, it's a way to run JavaScript code on the page -->
 
 
     <script>
         // This is a comment in JavaScript - it's a different language to HTML and CSS
-
-        let figure_1_spec = "wk1_chart1.json"; // We're storing the URL of the graph we want to display in a variable
+        let figure_1_spec = "wk1_chart1.json"; 
         let figure_2_spec = "wk1_chart2.json";
         let figure_3_spec = "wk1_decliningpop.json";
         let figure_4_spec = "wk1_selfpractice.json";
@@ -197,10 +227,15 @@
         let figure_10_spec = "wk4_chart1.json"
         let figure_11_spec = "wk4_chart2.json"
         let figure_12_spec = "wk7_chart1.json"
-        let figure_13_spec = "wk7_chart2.json"
+        let figure_13_spec = "wk7_chart3.json"
         let figure_14_spec = "wk6_ONSdashboard.json"
         let figure_15_spec = "wk9_chart1.json"
         let figure_16_spec = "CC5_and_project_1.json"
+        let figure_17_spec = "project_2_chart.json"
+        let figure_18_spec = "project_3_chart.json"
+        let figure_19_spec = "wk9_chart2.json"
+        let figure_20_spec = "project_4_chart.json"
+        let figure_21_spec = "project_5_chart.json"
 
                                                                                               // You should have a spec for a graph in this same folder. Just specify its name here, e.g. let figure_1_spec = "chart1.json"
 
@@ -220,14 +255,91 @@
         vegaEmbed('#Location14', figure_14_spec)
         vegaEmbed('#Location15', figure_15_spec)
         vegaEmbed('#Location16', figure_16_spec)
+        vegaEmbed('#Location17', figure_17_spec)
+        vegaEmbed('#Location18', figure_18_spec)
+        vegaEmbed('#Location19', figure_19_spec)
+        vegaEmbed('#Location20', figure_20_spec)
+        vegaEmbed('#Location21', figure_21_spec)
 
 
-
-        // Do you want to add more graphs?
-        // try defining a new variable for figure_3_spec, adding VegaEmbed for Location3, and adding a new section in the HTML
-        // e.g.
-        // let figure_3_spec = ...
-        // vegaEmbed('#Location3', figure_3_spec)
 
 
     </script>
+
+
+<script>
+    // Delay hiding the loader for better visibility
+    document.addEventListener("DOMContentLoaded", function () {
+        setTimeout(function () {
+            // Hide the loader after 3 seconds
+            document.querySelector('.loader-container').style.display = 'none';
+        }, 3000); // 3 seconds delay
+    });
+</script>
+
+
+<script>
+// Underground line colors for scroll progress bar
+const gradientColors = [
+  { color: "#D799AF", percentage: 15 }, // Hammersmith & City line color
+  { color: "#751056", percentage: 40 }, // Metropolitan line color
+  { color: "#0019A8", percentage: 65 }, // Piccadilly line color
+  { color: "#00A0E2", percentage: 100 } // Victoria line color
+]; 
+
+window.addEventListener("scroll", function () {
+  const scrollTop = window.scrollY;
+  const docHeight = document.body.scrollHeight - window.innerHeight;
+  const scrollPercent = (scrollTop / docHeight) * 100;
+
+  const progressBar = document.getElementById("scroll-progress");
+  let gradient = gradientColors
+    .filter(entry => scrollPercent >= entry.percentage)
+    .map(entry => `${entry.color} ${entry.percentage}%`)
+    .join(", ");
+
+  progressBar.style.background = `linear-gradient(to right, ${gradient})`;
+  progressBar.style.width = scrollPercent + "%";
+});
+</script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Add the 'no-scroll' class to the body when the loader is active
+        document.body.classList.add('no-scroll');
+
+        // Remove the loader after 3 seconds and re-enable scrolling
+        setTimeout(function () {
+            document.querySelector('.loader-container').style.display = 'none';
+            document.body.classList.remove('no-scroll'); // Re-enable scrolling
+        }, 3000); // 3 seconds delay
+    });
+</script>
+
+<script>
+    // Show the button after scrolling 100px down
+window.addEventListener("scroll", function () {
+    const button = document.getElementById("backToTop");
+    if (window.scrollY > 100) {
+        button.classList.add("show");
+    } else {
+        button.classList.remove("show");
+    }
+});
+
+// Scroll smoothly to the top when the button is clicked
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+</script>
+
+</body>
+    
+</html>
+
+
