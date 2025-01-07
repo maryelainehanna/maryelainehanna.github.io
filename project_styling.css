@@ -6,8 +6,9 @@ body {
     line-height: 1.6;
     background-color: rgb(0, 0, 0); 
     margin: 0 auto;
-    max-width: 1000px; 
+    max-width: 1500px; 
     padding-top: 60px;
+
   }
   
 /* Headings */
@@ -66,7 +67,7 @@ section {
 }
 
 
-/* I want both charts to be side by side in two columns*/
+/* I want portfolio charts of the same coding challenge to be side by side in two columns*/
 .two-column {
     display: flex;
     flex-direction: column;
@@ -86,18 +87,25 @@ section {
     display: flex;
     flex-direction: row;
     width: 100%;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     flex-wrap: wrap; 
     padding: 0 10px; 
     box-sizing: border-box;
+
+    gap: 20px; /* Adjust spacing between columns */
+    justify-content: center; /* Center align all columns */
 } 
 
 .column {
     display: flex;
-    flex: 1 1 calc(50% - 20px); 
+    flex: 1 1 45%; /* Allow columns to shrink and grow within 45% width */
+    max-width: 45%;
+    min-width: 300px;
+    margin: 0 auto;
+    /* flex: 1 1 calc(50% - 20px);  */
     flex-direction: column;
     align-items: center;
-    margin: 5px;
+    /* margin: 5px; */
     box-sizing: border-box;
     min-width: 300px;
     padding: 10px;
