@@ -1,0 +1,89 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/heat_map_tfl_demographics.csv",
+    "format": { "type": "csv" }
+  },
+  "title": {
+    "text": "Londoners' Travel Behaviour, Barriers, and Sentiments",
+    "subtitle": ["Source: TfL London Travel Demand Survey 2016/17", ""]
+  },
+  "padding": {
+    "top": 10
+  },
+  "height": 300,
+  "width": 300,
+  "mark": "rect",
+  "params": [
+    {
+      "name": "hover",
+      "select": { "type": "point", "on": "mouseover", "clear": "mouseout" }
+    },
+    {
+      "name": "surveyFilter",
+      "value": "Mode of Transport",
+      "bind": {
+        "input": "select",
+        "options": [
+          "Mode of Transport",
+          "Barriers to Use of Public Transport",
+          "Personal Safety",
+          "Weekday Journey Purpose",
+          "Access to Information",
+          "Satisfaction"
+        ],
+        "labels": [
+          "Mode of Transport (at least once a week)",
+          "Barriers to Use of Public Transport",
+          "Personal Safety",
+          "Weekday Journey Purpose",
+          "Access to Information",
+          "Satisfaction"
+        ],
+        "name": "Survey Topic: "
+      }
+    }
+  ],
+  "transform": [
+    { "filter": "datum['Survey Category'] === surveyFilter" },
+    {
+      "calculate": "datum['Proportion'] == 0 ? 'Data not collected' : format(datum['Proportion'], '.2f')",
+      "as": "ProportionLabel"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "Identity",
+      "type": "nominal",
+      "title": null,
+      "sort": [
+        "All Londoners",
+        "White",
+        "BAME",
+        "Men",
+        "Women",
+        "Older People (65+)",
+        "Younger People (<25)",
+        "Disabled People",
+        "Non-disabled People",
+        "People on Lower Incomes",
+        "Heterosexual Londoners",
+        "LGB Londoners"
+      ]
+    },
+    "y": { "field": "Survey Question", "type": "nominal", "title": null },
+    "color": {
+      "field": "Proportion",
+      "type": "quantitative",
+      "scale": { "scheme": "lighttealblue" },
+      "legend": { "title": "Proportion" },
+      "condition": { "test": "datum['Proportion'] == 0", "value": "lightgrey" }
+    },
+    "opacity": { "condition": { "param": "hover", "value": 1 }, "value": 0.1 },
+    "tooltip": [
+      { "field": "Survey Question", "type": "nominal", "title": "Topic" },
+      { "field": "Identity", "type": "nominal", "title": "Identity" },
+      { "field": "ProportionLabel", "type": "nominal", "title": "Proportion" }
+    ]
+  }
+}
