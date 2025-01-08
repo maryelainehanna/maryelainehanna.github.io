@@ -46,15 +46,15 @@
         <h2>Are TfL stations safe?</h2>
             <h3>A map of station crime in the TfL network</h3>
             <p>Chart 1 is a point map of crime at TfL stations in 2023-2024 as reported by the British Transport Police. 
-                This visualisation was created by scraping the British Transport Police's list of UK stations to parse out the TfL underground, overground, DLR, and Tramlink stations. 
+                This visualisation was created by scraping the British Transport Police's list of UK stations to parse out TfL stations. 
                 These were then matched with TfL's available station data.  </p>
                 <div class="chart-description">
                     <figure id="Location1"></figure>
                 </div>
             <h3>Data & Challenges</h3>
                 <p><a href="https://crimemaps.btp.police.uk/station_list">British Transport Police's list</a> did not have all TfL stations*, so some are left out of the map. Because the list
-                included UK-wide stations and used a certain naming convention for each type, I used Python code to clean and match the data with TfL's list of stations.
-                The <a href="https://tfl.gov.uk/corporate/transparency/freedom-of-information/foi-request-detail?referenceId=FOI-1451-1819">TfL station data csv</a> was last updated in 2018, meaning certain stations which opened after this date, such as Nine Elms, needed to be added for proper matching. 
+                included UK-wide stations and used a certain naming convention for each type, I used Python code to clean and process the data.
+                The <a href="https://tfl.gov.uk/corporate/transparency/freedom-of-information/foi-request-detail?referenceId=FOI-1451-1819">TfL station data csv</a> was last updated in 2018, meaning certain stations which opened after this date needed to be added for proper matching. 
                 My <a href="https://github.com/maryelainehanna/maryelainehanna.github.io/blob/main/Scraping_TfL_Crime.ipynb">Jupyter notebook</a> explains in-depth the process I took to correct errors in matching. </p>
                 <p></p>
                 <p><i>*British Transport Police did not have crime info for the following TfL stations:  Stratford High Street (DLR), Mile End (LU), 
@@ -66,17 +66,15 @@
         <section>
             <h2>Stuck on the tube?</h2>
             <h3>A visualisation of lost customer hours on the tube</h3>
-            <p>Chart 2 presents TfL's data on "lost customer hours," a measure of customer 
-                experience of reliability. These estimates capture the impact of service 
-                disruptions on the underground lines. According to TfL, lost customer hour 
-                values are influenced by the day of the week, the time of day, the location of the delay, the direction of travel, and the duration of the incident. </p>
+            <p>Chart 2 presents TfL's data on "lost customer hours," capturing the impact of service 
+                disruptions on the underground lines. </p>
             <div class="chart-description">
                 <p><i>Note: This visualisation is interactive. Click on the legend to highlight the underground line you are interested in viewing.</i></p>
                 <figure id="Location2"></figure>
             </div>
             <p>Since 2016, lost customer hours increased to a peak in 2019, with the Central line consistently hosting 
                 the most hours lost. However, the Covid-19 pandemic 
-                and the halting of normal movement made it difficult for 
+                made it difficult for 
                 TfL to capture this data past 2020, as demand assumptions no longer held up. </p>
         <h3>Data & Challenges</h3>
             <p><a href="https://tfl.gov.uk/corporate/publications-and-reports/underground-services-performance#:~:text=Lost%20Customer%20Hours%20is%20used,time%20lost%20by%20our%20customers.">TfL's lost customer hours data</a> only show lost customer hours for underground lines – and not all underground 
@@ -88,31 +86,30 @@
         <section>
             <h2>What about other cities?</h2>
             <h3>A visualisation of the relative affordability of London underground and bus services</h3>
-                <p>This analytic chart presents a comparison of the maximum price of single journey fares in major transit cities as of December 2024 
-                versus what percentage of the local hourly minimum wage this fare represents. Maximum prices include the furthest possible journey, 
-                in the case of systems which have distance-based fares (not including special fares such as airport journeys). </p>    
+                <p>This analytic chart presents a comparison of the affordability of the maximum price of single journey fares in major transit cities as of December 2024 
+                    (analysing the fare as a percentage of the minimum hourly wage). Maximum prices include the furthest possible journey 
+                in the case of distance-based systems (not including special fares such as airport journeys). </p>    
             <div class="chart-description">
                 <figure id="Location3"></figure>
                 <p><i>Note: Cities directly on the x-axis have no legal minimum wage.</i></p>
             </div>
-            <p>London (shown in <b>black</b> for easy comparison) has quite an unaffordable maximum underground fare, representing more than 
+            <p><b>London</b> has quite an unaffordable maximum underground fare, representing more than 
                 half of the London hourly minimum wage. 
-                In contrast, TfL's bus network – which is not distance-based – is relatively affordable (currently costing £1.75).</p>
+                In contrast, TfL's bus network – which is not distance-based – is relatively affordable.</p>
             <h3>Data & Challenges</h3>
-            <p>The data presented is self-compiled, as no one data source provided this information. Therefore, many transit 
-                agencies serve as the data sources. Due to frequent changes in transit pricing, these data points may become 
-                outdated soon, posing a threat to and heavy burden for replicability. Additionally, the conversion of global fares to GBP 
-                was done under currency exchange rates of late-December 2024. To compare sizes of networks, I chose to look at <a href="https://en.wikipedia.org/wiki/List_of_metro_systems">system length of metros</a>. However, 
-                bus networks were more difficult to compare, as some transit agencies provide square-mileage covered, while others 
-                provide data on length of routes themselves. To provide a more standardised view of bus network size, I turned to vehicle
-                fleet size, though these numbers may not provide an accurate view of how comprehensive the network operations are.</p>
+            <p>The data presented is self-compiled from the various transit agencies, as no one data source provided this information. 
+                Due to frequent changes in transit pricing, 
+                data may become outdated soon. The conversion of fares to GBP was done using exchange rates of late-December 2024. 
+                To compare network sizes, I looked to <a href="https://en.wikipedia.org/wiki/List_of_metro_systems">system length of metros</a>. However, bus networks were more difficult to compare, 
+                as some agencies provide square-mileage covered, while others provide data on length of routes. To standardise bus network size, 
+                I turned to fleet numbers, though this may not provide an accurate view of how comprehensive the operations are.
+                </p>
         </section>
 
         <section>
             <h2>What do Londoners think?</h2>
             <h3>A visualisation of TfL passenger survey responses</h3>
-                <p>This heat map compiles demographic data on Londoners' travel behaviours from TfL's travel demand survey. Key sections include the barriers to use of public 
-                    transport as well as safety experiences and perceptions, shedding light on which issues are most severe for certain groups of people.</p>
+                <p>This heat map compiles demographic survey data on Londoners' travel behaviours and experiences related to safety, reliability, and accessibility.</p>
                 <div class="chart-description">
                     <p><i>Note: This visualisation is interactive. Use the dropdown boxes to explore different parts of the survey data. BAME refers to "Black,
                     Asian, and minority ethnic" communities. LGB refers
@@ -121,44 +118,42 @@
                 </div>
             <h3>Data & Challenges</h3>
                 <p>Source is TfL's <a href="https://content.tfl.gov.uk/travel-in-london-understanding-our-diverse-communities-2019.pdf">Travel in London: 
-                Understanding our diverse communities 2019</a> report. The report misses some data points for certain groups (e.g. the barriers to travel for 
-                people on lower incomes) – represented by greyed-out boxes. </p>
+                Understanding our diverse communities 2019</a> report. The report misses some data points for certain groups – represented by greyed-out boxes. </p>
         </section>
 
         <section>
             <h2>Prefer to cycle?</h2>
             <h3>A map of TfL bikes scattered throughout London</h3>
-                <p>TfL's network is not limited to buses and trains; Santander bikes offer Londoners an easy, cost-effective, and 
-                    more autonomous mode of travel. This choropleth displays the percentage of households within each borough who 
-                    do not have access to a car or van and is overlayed with 
-                    a point map showing the locations of Santander bike docks throughout London. </p>
+                <p>TfL's network is not limited to buses and trains; Santander bikes offer Londoners a cost-effective and 
+                    more autonomous mode of travel. This choropleth displays the percentage of households within each borough without access to a car or van and is overlayed with 
+                    a point map of Santander bike dock points. </p>
             <div class="chart-description">
                 <p><i>Note: This visualisation is interactive. Use the checkboxes to see the
                 extent of TfL's network, where bike docks don't reach.</i></p>
                 <figure id="Location5"></figure>
             </div>
             <h3>Data & Challenges</h3>
-                <p>This chart is fed by <a href="https://api.tfl.gov.uk/">TfL's REST API</a>, which produces 
-                    near-real time data about the bikes docked at bike points throughout London. 
+                <p>This chart is fed by <a href="https://api.tfl.gov.uk/">TfL's REST API</a>, which produces near-real time data of Santander bikes docked throughout London. 
                     Bus stop locations are provided by the <a href="https://beta-naptan.dft.gov.uk/download/la">Department for Transport (DfT)</a>.
                     Station locations could not be extracted from DfT, as their dataset included non-London stations and was missing the NaPTAN codes necessary to
-                    isolate TfL stations from other UK stations. Therefore, station data was again retrieved from <a href="https://tfl.gov.uk/corporate/transparency/freedom-of-information/foi-request-detail?referenceId=FOI-1451-1819">TfL</a>. </p>
+                    isolate TfL stations specifically. Therefore, station data was again retrieved from <a href="https://tfl.gov.uk/corporate/transparency/freedom-of-information/foi-request-detail?referenceId=FOI-1451-1819">TfL</a>. </p>
         </section>
 
         <section>
             <h2></h2>
             <h3>Conclusion</h3>
-            <p>Transport for London clearly offers a comprehensive and multi-modal network covering the nation’s capital, 
+            <p>Transport for London offers a comprehensive and multi-modal network covering the nation’s capital, 
                 though cost and overcrowding pose barriers to higher usage of TfL services. Though the underground 
-                fare can be a costly barrier for many passengers, TfL’s expansive bus network can be accessed through
-                 a relatively low fare, making passengers appreciate its value for money over that of the tube. As expected, central London hosts the 
-                 largest number of station crimes – likely due to its high traffic and tourist vulnerability 
-                 – with some high-crime stations scattered throughout the outskirts. However, safety and
-                perceptions of safety on the network itself varies, with groups like women, BAME passengers, and disabled 
-                people much more worried about their personal safety on public transport,
-                 even experiencing hate crimes and unwanted sexual behaviour. Nonetheless, the collection of this data may point to TfL's willingness
-                 to constantly improve passenger experiences throughout London and can help us understand just how safe, reliable, 
-                 and accessible TfL's services truly are.</p> 
+                fare can be a costly barrier for many, TfL’s expansive bus network can be accessed through
+                 a relatively low fare, making passengers appreciate its value for money. Central London – with its
+                  high traffic and tourist vulnerability 
+                 – unsurprisingly hosts the largest number of station crimes with some high-crime stations 
+                 scattered throughout the outskirts. However, safety on the network itself varies,
+                  with groups like women, BAME passengers, and disabled people much more vulnerable to crime and 
+                  worried about their safety on public transport.
+                  Nonetheless, the collection and publication of this data may point to TfL's willingness to constantly 
+                  improve passenger experiences and can help explain just how safe, 
+                  reliable, and accessible TfL's services truly are.</p> 
         </section>
 
 
