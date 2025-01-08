@@ -45,17 +45,17 @@
         <section>
         <h2>Are TfL stations safe?</h2>
             <h3>A map of station crime in the TfL network</h3>
-            <p>Chart 1 is a point map of crime at TfL stations in 2023-2024 as reported by the British Transport Police (BTP). 
+            <p>Chart 1 is a point map of crime at TfL stations in 2023-2024 as reported by the British Transport Police. 
                 This visualisation was created by scraping the British Transport Police's list of UK stations to parse out the TfL underground, overground, DLR, and Tramlink stations. 
                 These were then matched with TfL's available station data.  </p>
                 <div class="chart-description">
                     <figure id="Location1"></figure>
                 </div>
             <h3>Data & Challenges</h3>
-                <p><a href="https://crimemaps.btp.police.uk/station_list">British Transport Police's list</a> did not have all TfL stations* within their list, so some are left out of the map. Because the listed
+                <p><a href="https://crimemaps.btp.police.uk/station_list">British Transport Police's list</a> did not have all TfL stations*, so some are left out of the map. Because the list
                 included UK-wide stations and used a certain naming convention for each type, I used Python code to clean and match the data with TfL's list of stations.
-                The <a href="https://tfl.gov.uk/corporate/transparency/freedom-of-information/foi-request-detail?referenceId=FOI-1451-1819">TfL station data csv</a> was last updated in 2018, meaning certain stations which opened after this date, such as Nine Elms, were not listed and needed to be included to match up with the BTP list. 
-                My <a href="https://github.com/maryelainehanna/maryelainehanna.github.io/blob/main/Scraping_TfL_Crime.ipynb">Jupyter notebook </a>explains in-depth the process I took to correct errors in matching. </p>
+                The <a href="https://tfl.gov.uk/corporate/transparency/freedom-of-information/foi-request-detail?referenceId=FOI-1451-1819">TfL station data csv</a> was last updated in 2018, meaning certain stations which opened after this date, such as Nine Elms, needed to be added for proper matching. 
+                My <a href="https://github.com/maryelainehanna/maryelainehanna.github.io/blob/main/Scraping_TfL_Crime.ipynb">Jupyter notebook</a> explains in-depth the process I took to correct errors in matching. </p>
                 <p></p>
                 <p><i>*British Transport Police did not have crime info for the following TfL stations:  Stratford High Street (DLR), Mile End (LU), 
                 Rickmansworth (LU), Stockwell (LU), South Wimbledon (LU). 
@@ -104,7 +104,7 @@
                 outdated soon, posing a threat to and heavy burden for replicability. Additionally, the conversion of global fares to GBP 
                 was done under currency exchange rates of late-December 2024. To compare sizes of networks, I chose to look at <a href="https://en.wikipedia.org/wiki/List_of_metro_systems">system length of metros</a>. However, 
                 bus networks were more difficult to compare, as some transit agencies provide square-mileage covered, while others 
-                provide data on length of routes themselves. To provide a more accurate view of bus network size, I turned to vehicle
+                provide data on length of routes themselves. To provide a more standardised view of bus network size, I turned to vehicle
                 fleet size, though these numbers may not provide an accurate view of how comprehensive the network operations are.</p>
         </section>
 
@@ -112,8 +112,7 @@
             <h2>What do Londoners think?</h2>
             <h3>A visualisation of TfL passenger survey responses</h3>
                 <p>This heat map compiles demographic data on Londoners' travel behaviours from TfL's travel demand survey. Key sections include the barriers to use of public 
-                    transport as well as safety experiences and perceptions, shedding light on which reliability, 
-                    safety, and accessibility issues are most severe for certain groups of people.</p>
+                    transport as well as safety experiences and perceptions, shedding light on which issues are most severe for certain groups of people.</p>
                 <div class="chart-description">
                     <p><i>Note: This visualisation is interactive. Use the dropdown boxes to explore different parts of the survey data. BAME refers to "Black,
                     Asian, and minority ethnic" communities. LGB refers
@@ -123,7 +122,7 @@
             <h3>Data & Challenges</h3>
                 <p>Source is TfL's <a href="https://content.tfl.gov.uk/travel-in-london-understanding-our-diverse-communities-2019.pdf">Travel in London: 
                 Understanding our diverse communities 2019</a> report. The report misses some data points for certain groups (e.g. the barriers to travel for 
-                people on lower incomes) -- represented by greyed-out boxes. </p>
+                people on lower incomes) – represented by greyed-out boxes. </p>
         </section>
 
         <section>
@@ -141,15 +140,15 @@
             <h3>Data & Challenges</h3>
                 <p>This chart is fed by <a href="https://api.tfl.gov.uk/">TfL's REST API</a>, which produces 
                     near-real time data about the bikes docked at bike points throughout London. 
-                    Bus stops locations are provided by the <a href="https://beta-naptan.dft.gov.uk/download/la">Department for Transport (DfT)</a>.
+                    Bus stop locations are provided by the <a href="https://beta-naptan.dft.gov.uk/download/la">Department for Transport (DfT)</a>.
                     Station locations could not be extracted from DfT, as their dataset included non-London stations and was missing the NaPTAN codes necessary to
-                    isolate TfL stations from other UK stations. Therefore, station data was retrieved from <a href="https://tfl.gov.uk/corporate/transparency/freedom-of-information/foi-request-detail?referenceId=FOI-1451-1819">TfL</a>. </p>
+                    isolate TfL stations from other UK stations. Therefore, station data was again retrieved from <a href="https://tfl.gov.uk/corporate/transparency/freedom-of-information/foi-request-detail?referenceId=FOI-1451-1819">TfL</a>. </p>
         </section>
 
         <section>
             <h2></h2>
             <h3>Conclusion</h3>
-            <p>Transport for London clearly offers a comprehensive network covering the nation’s capital, 
+            <p>Transport for London clearly offers a comprehensive and multi-modal network covering the nation’s capital, 
                 though cost and overcrowding pose barriers to higher usage of TfL services. Though the underground 
                 fare can be a costly barrier for many passengers, TfL’s expansive bus network can be accessed through
                  a relatively low fare, making passengers appreciate its value for money over that of the tube. As expected, central London hosts the 
@@ -157,7 +156,7 @@
                  – with some high-crime stations scattered throughout the outskirts. However, safety and
                 perceptions of safety on the network itself varies, with groups like women, BAME passengers, and disabled 
                 people much more worried about their personal safety on public transport,
-                 even experiencing hate crimes and sexual behaviour. Nonetheless, the collection of this data may point to TfL's willingness
+                 even experiencing hate crimes and unwanted sexual behaviour. Nonetheless, the collection of this data may point to TfL's willingness
                  to constantly improve passenger experiences throughout London and can help us understand just how safe, reliable, 
                  and accessible TfL's services truly are.</p> 
         </section>
