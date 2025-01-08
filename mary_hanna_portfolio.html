@@ -13,8 +13,6 @@
             display: flex;
         }
     </style>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
@@ -50,15 +48,15 @@
 
 
     <section class="two-column">
-        <h2 id="section1" class="section-header">CC1 - Hosting. Display charts in your own site.</h2>
+        <h2 id="section1">CC1 - Hosting. Display charts in your own site.</h2>
             <div class="column-container">
                 <div class="column">
                     <div class="chart-description">
                         <h3>Chart 1</h3>
                         <figure id="Location1"></figure> 
                     </div>
-                </div>
-                <div class="column">
+            </div>
+                <div class="column" margin-right="20px">
                     <div class="chart-description">
                         <h3>Chart 2</h3>
                         <figure id="Location2"></figure>
@@ -91,7 +89,7 @@
 
 
 <section class="two-column">
-    <h2 id="section3" class="section-header">CC3 - Debating. Use a visualisation in economic/policy commentary. </h2>
+    <h2 id="section3">CC3 - Debating. Use a visualisation in economic/policy commentary. </h2>
         <p>2024's Festival of Economics featured the discussion, "The kids aren’t alright: Tackling a legacy of child poverty, 
         bad diets and poor health." This topic inspired me to explore a key part of children's health - mental health.</p>    
                 <div class="chart-description">
@@ -107,7 +105,7 @@
             
 
 <section class="two-column">
-    <h2 id="section4" class="section-header">CC4 - Replication. Re-create, then improve, someone else's chart. </h2>
+    <h2 id="section4">CC4 - Replication. Re-create, then improve, someone else's chart. </h2>
         <p>I scraped the data found on <a href="https://www.washingtonpost.com/elections/interactive/2024/biggest-campaign-donors-election-2024/">this Washington Post article</a> and replicated the original visualisation.
              My new chart disaggregates donor info, explorable through tooltip.</p>    
         <div class="chart-description">
@@ -124,7 +122,7 @@
     </section>
 
 <section class="two-column">
-        <h2 id="section5" class="section-header">CC5 - Scraper. Implement a data scraper of your own. </h2>
+        <h2 id="section5">CC5 - Scraper. Implement a data scraper of your own. </h2>
         <p>I scraped the British Transport Police’s <a href = "https://crimemaps.btp.police.uk/station_list">list of stations </a> to retrieve crime data (specifically in TfL stations). 
         I chose this site for its relevance to my project.</p>
         <p><a href="https://github.com/maryelainehanna/maryelainehanna.github.io/blob/main/Scraping_TfL_Crime.ipynb">Jupyter notebook (step-by-step explanations).</a> <a href="https://colab.research.google.com/drive/1abKnX1xScFli6c2jBtYfBMJ6zV9LoGsp?usp=sharing">Colab notebook.</a></p>
@@ -135,25 +133,31 @@
 
 
 <section class="two-column">
-    <h2 id="section6" class="section-header">CC6 - Loops. Build a dashboard. </h2>
-        <div class="chart description">
-            <p><a href="https://colab.research.google.com/drive/1Sn8lg_6da37Iw4myDEPxynmAZ9wp84Wq?usp=sharing">Colab notebook.</a></p>
-            <figure id="Location14"></figure>
+    <h2 id="section6">CC6 - Loops. Build a dashboard. </h2>
+    <div class="column-container" style="justify-content: center;">
+        <div class="column" style="margin-left: 40px;">
+            <p style="text-align: center;">
+                <a href="https://colab.research.google.com/drive/1Sn8lg_6da37Iw4myDEPxynmAZ9wp84Wq?usp=sharing">Colab notebook.</a>
+            </p>
+            <div class="chart-description"></div>
+                <figure id="Location14"></figure>
+            </div>
         </div>
+    </div>
 </section>
 
 
 <section class="two-column">
-    <h2 id="section7" class="section-header">CC7 - Maps. Base maps and choropleths. </h2>
+    <h2 id="section7">CC7 - Maps. Base maps and choropleths. </h2>
         <div class = "column-container">
             <div class="column">
-                <div class="chart description">
+                <div class="chart-description">
                     <h3>Chart 1</h3>
                     <figure id="Location12"></figure>
                 </div>
             </div>
             <div class="column">
-                <div class="chart description">
+                <div class="chart-description">
                     <h3>Chart 2</h3>
                     <figure id="Location13"></figure>
                 </div>
@@ -165,29 +169,29 @@
 
 
 <section class="two-column">
-    <h2 id="section8" class="section-header">CC8 - Analytics charts. </h2>
-        <div class="chart description">
+    <h2 id="section8">CC8 - Analytics charts. </h2>
+        <div class="chart-description">
             <h3>Chart 1</h3>
             <figure id="Location18"></figure>
         </div>
-        <div class="chart description">
+        <div class="chart-description">
             <h3>Chart 2</h3>
             <figure id="Location20"></figure>
         </div>
 </section>
 
 <section class="two-column">
-    <h2 id="section9" class="section-header">CC9 - Big data. Extracting a story from millions of prices. </h2>
+    <h2 id="section9">CC9 - Big data. Extracting a story from millions of prices. </h2>
         <div class="column-container">
             <p>These two charts utilize ONS microdata via Davies (2021) to track the median yearly prices of two personal health items in the UK – tampons and vitamins. The price data was 1) merged with region data and then filtered for the target items and their median prices.</p>
             <div class="column">
-                <div class="chart description">
+                <div class="chart-description">
                     <h3>Chart 1</h3>
                     <figure id="Location15"></figure>
                 </div>
             </div>
             <div class="column">
-                <div class="chart description">
+                <div class="chart-description">
                     <h3>Chart 2</h3>
                     <figure id="Location19"></figure>
                 </div>
@@ -197,7 +201,7 @@
 
 
 <section class="two-column">
-    <h2 id="section10" class="section-header">CC10 - Interactive visualisations. </h2>
+    <h2 id="section10">CC10 - Interactive visualisations. </h2>
         <div class="chart-description">
             <h3>Chart 1</h3>
                 <p>Interactive element: click on legend to isolate underground lines.</p>
@@ -343,5 +347,4 @@ function scrollToTop() {
 </body>
     
 </html>
-
 

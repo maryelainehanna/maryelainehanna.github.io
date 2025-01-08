@@ -56,15 +56,13 @@ p {
 /* Section styling */
 section {
     background-color: #FFFFFF;
-    /* margin: 50px 50px; */
-    padding: 10px;
+    margin: 20px 0;
+    padding: 20px;
     border-radius: 40px;
     border: 5px inset #1C6EA4;
     box-shadow: 0px 2px 8px rgb(210, 213, 213); 
     box-sizing: border-box;      /* Includes padding and border in width calculations */
     overflow: hidden;            /* Ensures no content overflows the section box */
-    max-width: 900px; /* Adjust to your preference */
-    margin: 50px 50px; /* Center align sections */
 }
 
 
@@ -76,6 +74,7 @@ section {
     margin: 20px auto; 
     padding: 20px; 
     box-sizing: border-box;
+    margin-left: -0px; /* Adjust the margin to shift the container to the left */
 }
 
 .section-header {
@@ -88,11 +87,11 @@ section {
     display: flex;
     flex-direction: row;
     width: 100%;
-    justify-content: space-between;
+    justify-content: flex-start; /* Align items to the start (left) */
     flex-wrap: wrap; 
-    padding: 0 20px; 
+    padding: 0 10px;
     box-sizing: border-box;
-} 
+}
 
 .column {
     display: flex;
@@ -103,6 +102,7 @@ section {
     box-sizing: border-box;
     min-width: 300px;
     padding: 10px;
+    margin-left: -20px;
 }
 
 .chart-description {
