@@ -1,0 +1,469 @@
+Borough,Year,Receipts
+Barking & Dagenham,2012,3648
+Barnet,2012,45248
+Bexley,2012,56732
+Brent,2012,35213
+Bromley,2012,130848
+Camden,2012,191431
+City,2012,1012252
+Croydon,2012,26112
+Ealing,2012,6471
+Enfield,2012,11816
+Greenwich,2012,295653
+Hackney,2012,19690
+Hammersmith & Fulham,2012,142820
+Haringey,2012,90856
+Harrow,2012,14844
+Havering,2012,21773
+Hillingdon,2012,0
+Hounslow,2012,17338
+Islington,2012,134031
+Kensington & Chelsea,2012,0
+Kingston,2012,71450
+Lambeth,2012,801201
+Lewisham,2012,24693
+LLDC,2012,0
+Merton,2012,146379
+Newham,2012,0
+OPDC,2012,0
+Redbridge,2012,29370
+Richmond,2012,42778
+Southwark,2012,78107
+Sutton,2012,3906
+Tower Hamlets,2012,225372
+Waltham Forest,2012,10280
+Wandsworth,2012,333888
+Westminster,2012,2066374
+Total,2012,6090573
+Barking & Dagenham,2013,221257
+Barnet,2013,2422709
+Bexley,2013,652540
+Brent,2013,1620246
+Bromley,2013,713649
+Camden,2013,3335287
+City,2013,4511614
+Croydon,2013,340654
+Ealing,2013,954183
+Enfield,2013,445264
+Greenwich,2013,2704875
+Hackney,2013,1239002
+Hammersmith & Fulham,2013,2087838
+Haringey,2013,454387
+Harrow,2013,438788
+Havering,2013,79379
+Hillingdon,2013,836061
+Hounslow,2013,1870532
+Islington,2013,1375481
+Kensington & Chelsea,2013,543994
+Kingston,2013,445484
+Lambeth,2013,4218376
+Lewisham,2013,679182
+LLDC,2013,362207
+Merton,2013,523841
+Newham,2013,172929
+OPDC,2013,0
+Redbridge,2013,189257
+Richmond,2013,213796
+Southwark,2013,2175645
+Sutton,2013,329923
+Tower Hamlets,2013,3675034
+Waltham Forest,2013,465845
+Wandsworth,2013,2001862
+Westminster,2013,4391886
+Total,2013,46693006
+Barking & Dagenham,2014,314546
+Barnet,2014,3447330
+Bexley,2014,497906
+Brent,2014,3129950
+Bromley,2014,1273726
+Camden,2014,3385225
+City,2014,1627033
+Croydon,2014,675187
+Ealing,2014,1402864
+Enfield,2014,1208924
+Greenwich,2014,1273114
+Hackney,2014,3691268
+Hammersmith & Fulham,2014,4303835
+Haringey,2014,329074
+Harrow,2014,664686
+Havering,2014,312081
+Hillingdon,2014,856121
+Hounslow,2014,2916428
+Islington,2014,3856864
+Kensington & Chelsea,2014,1605110
+Kingston,2014,102255
+Lambeth,2014,4395274
+Lewisham,2014,400547
+LLDC,2014,1872888
+Merton,2014,796637
+Newham,2014,2034709
+OPDC,2014,0
+Redbridge,2014,300904
+Richmond,2014,715930
+Southwark,2014,6886455
+Sutton,2014,319142
+Tower Hamlets,2014,4756495
+Waltham Forest,2014,772910
+Wandsworth,2014,5732401
+Westminster,2014,7329079
+Total,2014,73186895
+Barking & Dagenham,2015,307834
+Barnet,2015,4034220
+Bexley,2015,1146317
+Brent,2015,4073861
+Bromley,2015,2025760
+Camden,2015,3928139
+City,2015,4821314
+Croydon,2015,881858
+Ealing,2015,1424295
+Enfield,2015,1033043
+Greenwich,2015,6795687
+Hackney,2015,6188610
+Hammersmith & Fulham,2015,8713249
+Haringey,2015,2602304
+Harrow,2015,299529
+Havering,2015,192765
+Hillingdon,2015,3972431
+Hounslow,2015,4316286
+Islington,2015,6065137
+Kensington & Chelsea,2015,3238948
+Kingston,2015,1693976
+Lambeth,2015,4501947
+Lewisham,2015,2158139
+LLDC,2015,3989226
+Merton,2015,1354814
+Newham,2015,1459060
+OPDC,2015,0
+Redbridge,2015,450266
+Richmond,2015,367162
+Southwark,2015,6356703
+Sutton,2015,597705
+Tower Hamlets,2015,14706088
+Waltham Forest,2015,303468
+Wandsworth,2015,7659201
+Westminster,2015,6976939
+Total,2015,118636281
+Barking & Dagenham,2016,949173
+Barnet,2016,4018645
+Bexley,2016,778304
+Brent,2016,2169126
+Bromley,2016,1484505
+Camden,2016,3755808
+City,2016,16155428
+Croydon,2016,1177363
+Ealing,2016,1134355
+Enfield,2016,873419
+Greenwich,2016,4327654
+Hackney,2016,4237877
+Hammersmith & Fulham,2016,8841070
+Haringey,2016,3957497
+Harrow,2016,2694865
+Havering,2016,1124943
+Hillingdon,2016,4436985
+Hounslow,2016,3243400
+Islington,2016,2135997
+Kensington & Chelsea,2016,1671773
+Kingston,2016,1244370
+Lambeth,2016,9370815
+Lewisham,2016,2804381
+LLDC,2016,4114540
+Merton,2016,764990
+Newham,2016,1260769
+OPDC,2016,141081
+Redbridge,2016,377134
+Richmond,2016,1605715
+Southwark,2016,8070043
+Sutton,2016,1183188
+Tower Hamlets,2016,16431167
+Waltham Forest,2016,1332141
+Wandsworth,2016,6150221
+Westminster,2016,12841367
+Total,2016,136860108
+Barking & Dagenham,2017,542713
+Barnet,2017,2880862
+Bexley,2017,1514659
+Brent,2017,7831987
+Bromley,2017,2640587
+Camden,2017,2749057
+City,2017,2001893
+Croydon,2017,1965633
+Ealing,2017,2174456
+Enfield,2017,992279
+Greenwich,2017,5401131
+Hackney,2017,3460740
+Hammersmith & Fulham,2017,2644550
+Haringey,2017,890241
+Harrow,2017,4386114
+Havering,2017,871561
+Hillingdon,2017,1978452
+Hounslow,2017,3037575
+Islington,2017,2797560
+Kensington & Chelsea,2017,2199852
+Kingston,2017,667172
+Lambeth,2017,1422167
+Lewisham,2017,2026247
+LLDC,2017,2310055
+Merton,2017,1158437
+Newham,2017,4538617
+OPDC,2017,4008779
+Redbridge,2017,341639
+Richmond,2017,1279229
+Southwark,2017,4078669
+Sutton,2017,589821
+Tower Hamlets,2017,10328372
+Waltham Forest,2017,2324342
+Wandsworth,2017,4724880
+Westminster,2017,16234265
+Total,2017,108994589
+Barking & Dagenham,2018,2021754
+Barnet,2018,4496586
+Bexley,2018,1330350
+Brent,2018,9390621
+Bromley,2018,1029989
+Camden,2018,6485799
+City,2018,4388713
+Croydon,2018,2221729
+Ealing,2018,3994537
+Enfield,2018,2496168
+Greenwich,2018,4814158
+Hackney,2018,4295465
+Hammersmith & Fulham,2018,646384
+Haringey,2018,2603145
+Harrow,2018,1627861
+Havering,2018,1460768
+Hillingdon,2018,2143020
+Hounslow,2018,8850692
+Islington,2018,2859547
+Kensington & Chelsea,2018,3688488
+Kingston,2018,2325116
+Lambeth,2018,2947340
+Lewisham,2018,569026
+LLDC,2018,1057894
+Merton,2018,2657862
+Newham,2018,4142180
+OPDC,2018,1308643
+Redbridge,2018,479140
+Richmond,2018,1045963
+Southwark,2018,3223500
+Sutton,2018,316143
+Tower Hamlets,2018,5428361
+Waltham Forest,2018,1740594
+Wandsworth,2018,6959986
+Westminster,2018,11998781
+Total,2018,117046304
+Barking & Dagenham,2019,1196790
+Barnet,2019,5495936
+Bexley,2019,1235103
+Brent,2019,5689924
+Bromley,2019,3435210
+Camden,2019,1210516
+City,2019,10018910
+Croydon,2019,1556640
+Ealing,2019,5995565
+Enfield,2019,1078151
+Greenwich,2019,2342585
+Hackney,2019,2845809
+Hammersmith & Fulham,2019,4799571
+Haringey,2019,7224269
+Harrow,2019,1015213
+Havering,2019,1926251
+Hillingdon,2019,1872838
+Hounslow,2019,4318135
+Islington,2019,4791374
+Kensington & Chelsea,2019,1984534
+Kingston,2019,2597528
+Lambeth,2019,3840706
+Lewisham,2019,2372357
+LLDC,2019,8762416
+Merton,2019,3046822
+Newham,2019,2104161
+OPDC,2019,1670854
+Redbridge,2019,496667
+Richmond,2019,1628169
+Southwark,2019,5434516
+Sutton,2019,445813
+Tower Hamlets,2019,9822073
+Waltham Forest,2019,893808
+Wandsworth,2019,7166646
+Westminster,2019,15537620
+Total,2019,135853482
+Barking & Dagenham,2020,492045
+Barnet,2020,4265690
+Bexley,2020,1041989
+Brent,2020,4290054
+Bromley,2020,2057231
+Camden,2020,2955331
+City,2020,2031248
+Croydon,2020,5628037
+Ealing,2020,6796204
+Enfield,2020,735607
+Greenwich,2020,578204
+Hackney,2020,3168290
+Hammersmith & Fulham,2020,14570158
+Haringey,2020,1362270
+Harrow,2020,801952
+Havering,2020,755301
+Hillingdon,2020,4972531
+Hounslow,2020,3258231
+Islington,2020,2759421
+Kensington & Chelsea,2020,890376
+Kingston,2020,2738822
+Lambeth,2020,1322120
+Lewisham,2020,2066628
+LLDC,2020,699153
+Merton,2020,1244136
+Newham,2020,1967152
+OPDC,2020,558108
+Redbridge,2020,722300
+Richmond,2020,347264
+Southwark,2020,5447229
+Sutton,2020,1100717
+Tower Hamlets,2020,25121248
+Waltham Forest,2020,933760
+Wandsworth,2020,5464781
+Westminster,2020,8784949
+Total,2020,121928536
+Barking & Dagenham,2021,826458
+Barnet,2021,7074911
+Bexley,2021,1266821
+Brent,2021,4510413
+Bromley,2021,2283462
+Camden,2021,3943441
+City,2021,10019927
+Croydon,2021,1448391
+Ealing,2021,4471616
+Enfield,2021,2324552
+Greenwich,2021,3056502
+Hackney,2021,2795907
+Hammersmith & Fulham,2021,7280379
+Haringey,2021,3706647
+Harrow,2021,1266432
+Havering,2021,789907
+Hillingdon,2021,7951143
+Hounslow,2021,2470163
+Islington,2021,3739131
+Kensington & Chelsea,2021,2891980
+Kingston,2021,1786372
+Lambeth,2021,2295750
+Lewisham,2021,2697472
+LLDC,2021,546889
+Merton,2021,1810513
+Newham,2021,4677280
+OPDC,2021,1458983
+Redbridge,2021,956840
+Richmond,2021,745615
+Southwark,2021,12985082
+Sutton,2021,431206
+Tower Hamlets,2021,12166815
+Waltham Forest,2021,3553025
+Wandsworth,2021,11098609
+Westminster,2021,11815041
+Total,2021,143143675
+Barking & Dagenham,2022,2041863
+Barnet,2022,7539090
+Bexley,2022,1199255
+Brent,2022,6832117
+Bromley,2022,1589219
+Camden,2022,6325604
+City,2022,27198935
+Croydon,2022,964774
+Ealing,2022,5366722
+Enfield,2022,1934613
+Greenwich,2022,3001146
+Hackney,2022,4494231
+Hammersmith & Fulham,2022,4885646
+Haringey,2022,2283760
+Harrow,2022,3814411
+Havering,2022,684462
+Hillingdon,2022,2672319
+Hounslow,2022,3804180
+Islington,2022,1381996
+Kensington & Chelsea,2022,1209846
+Kingston,2022,2360542
+Lambeth,2022,6363413
+Lewisham,2022,3872120
+LLDC,2022,2764272
+Merton,2022,2540163
+Newham,2022,2790479
+OPDC,2022,1766589
+Redbridge,2022,810648
+Richmond,2022,730436
+Southwark,2022,20606091
+Sutton,2022,465648
+Tower Hamlets,2022,7848033
+Waltham Forest,2022,4930936
+Wandsworth,2022,10228841
+Westminster,2022,11414675
+Total,2022,168717072
+Barking & Dagenham,2023,5000023
+Barnet,2023,4610493
+Bexley,2023,1144241
+Brent,2023,8505553
+Bromley,2023,1942532
+Camden,2023,7212404
+City,2023,31684769
+Croydon,2023,579917
+Ealing,2023,4954780
+Enfield,2023,899789
+Greenwich,2023,2918103
+Hackney,2023,2757719
+Hammersmith & Fulham,2023,9378577
+Haringey,2023,2610585
+Harrow,2023,1475731
+Havering,2023,716422
+Hillingdon,2023,3114593
+Hounslow,2023,1154704
+Islington,2023,2917095
+Kensington & Chelsea,2023,1938111
+Kingston,2023,1986188
+Lambeth,2023,4314569
+Lewisham,2023,710384
+LLDC,2023,5582912
+Merton,2023,1995284
+Newham,2023,1251806
+OPDC,2023,5048454
+Redbridge,2023,2178497
+Richmond,2023,1531062
+Southwark,2023,5738564
+Sutton,2023,377971
+Tower Hamlets,2023,11940767
+Waltham Forest,2023,1417322
+Wandsworth,2023,4960171
+Westminster,2023,11691209
+Total,2023,156241302
+Barking & Dagenham,CumulativeTotal,13918104
+Barnet,CumulativeTotal,50331717
+Bexley,CumulativeTotal,11864216
+Brent,CumulativeTotal,58079065
+Bromley,CumulativeTotal,20606717
+Camden,CumulativeTotal,45478043
+City,CumulativeTotal,115472035
+Croydon,CumulativeTotal,17466293
+Ealing,CumulativeTotal,38676050
+Enfield,CumulativeTotal,14033624
+Greenwich,CumulativeTotal,37508812
+Hackney,CumulativeTotal,39194607
+Hammersmith & Fulham,CumulativeTotal,68294077
+Haringey,CumulativeTotal,28115035
+Harrow,CumulativeTotal,18500426
+Havering,CumulativeTotal,8935611
+Hillingdon,CumulativeTotal,34806493
+Hounslow,CumulativeTotal,39257665
+Islington,CumulativeTotal,34813634
+Kensington & Chelsea,CumulativeTotal,21863011
+Kingston,CumulativeTotal,18019273
+Lambeth,CumulativeTotal,45793678
+Lewisham,CumulativeTotal,20381177
+LLDC,CumulativeTotal,32062451
+Merton,CumulativeTotal,18039878
+Newham,CumulativeTotal,26399142
+OPDC,CumulativeTotal,15961492
+Redbridge,CumulativeTotal,7332662
+Richmond,CumulativeTotal,10253119
+Southwark,CumulativeTotal,81080604
+Sutton,CumulativeTotal,6161184
+Tower Hamlets,CumulativeTotal,122449825
+Waltham Forest,CumulativeTotal,18678430
+Wandsworth,CumulativeTotal,72481486
+Westminster,CumulativeTotal,121082184
+Total,CumulativeTotal,1333391821
