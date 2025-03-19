@@ -4,7 +4,6 @@
   "height": 600,
   "projection": {"type": "mercator"},
   "layer": [
-    // Boroughs Layer (Background)
     {
       "data": {
         "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/london_421.topojson",
@@ -37,7 +36,6 @@
       }
     },
 
-    // MSOA Layer (Highlighted on top)
     {
       "data": {
         "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/reprojected_msoa%20(1).topojson",
@@ -57,7 +55,7 @@
         {
           "filter": {
             "field": "properties.MSOA21CD",
-            "oneOf": ["E02000313", "E02000314", "E02000746"]  // Replace with the MSOAs you want
+            "oneOf": ["E02000313", "E02000314", "E02000746"]
           }
         }
       ],
@@ -66,12 +64,40 @@
         "color": {
           "field": "Deprived",
           "type": "quantitative",
-          "scale": {"scheme": "reds"},
+          "scale": {"scheme": "blues"},
           "title": "% Deprived Households"
         },
         "tooltip": [
           {"field": "properties.MSOA21CD", "type": "nominal", "title": "MSOA"},
           {"field": "Deprived", "type": "quantitative", "title": "% Deprived Households"}
+        ]
+      }
+    },
+
+    {
+      "data": {
+        "values": [
+          {
+            "Station": "Thamesmead",
+            "Longitude": 0.1033,
+            "Latitude": 51.5058
+          },
+          {
+            "Station": "Beckton Riverside",
+            "Longitude": 0.079181,
+            "Latitude": 51.514969, 
+
+          }
+        ]
+      },
+      "mark": {"type": "circle", "color": "yellow", "size": 50},
+      "encoding": {
+        "latitude": {"field": "Latitude", "type": "quantitative"},
+        "longitude": {"field": "Longitude", "type": "quantitative"},
+        "tooltip": [
+          {"field": "Station", "type": "nominal", "title": "Station"},
+          {"field": "Latitude", "type": "quantitative"},
+          {"field": "Longitude", "type": "quantitative"}
         ]
       }
     }
