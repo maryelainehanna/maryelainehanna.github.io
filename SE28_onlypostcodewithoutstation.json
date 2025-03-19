@@ -1,0 +1,47 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 800,
+  "height": 600,
+  "projection": {"type": "mercator"},
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/mapshaper_postcodes.topojson",
+        "format": {"type": "topojson", "feature": "fixed_postcodes"}
+      },
+      "mark": {"type": "geoshape", "stroke": "white"},
+      "encoding": {
+        "color": {
+          "condition": {
+            "test": "datum['properties.Name'] === 'SE28'",
+            "value": "steelblue"
+          },
+          "value": "lightgray"
+        },
+        "tooltip": [
+          {"field": "properties.Name", "type": "nominal", "title": "Postcode"},
+          {"field": "properties", "type": "nominal", "title": "All Properties"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/Station_data.csv"
+      },
+      "transform": [
+        {"filter": "datum.Longitude >= -0.35 && datum.Longitude <= 0.14"},
+        {"filter": "datum.Latitude >= 51.38 && datum.Latitude <= 51.66"}
+      ],
+      "mark": {"type": "circle", "color": "red", "size": 40},
+      "encoding": {
+        "longitude": {"field": "Longitude", "type": "quantitative"},
+        "latitude": {"field": "Latitude", "type": "quantitative"},
+        "tooltip": [
+          {"field": "Station", "type": "nominal", "title": "Station"},
+          {"field": "Longitude", "type": "quantitative", "title": "Longitude"},
+          {"field": "Latitude", "type": "quantitative", "title": "Latitude"}
+        ]
+      }
+    }
+  ]
+}
