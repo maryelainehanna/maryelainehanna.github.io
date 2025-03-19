@@ -4,22 +4,22 @@
   "height": 600,
   "projection": {"type": "mercator"},
   "layer": [
-      {
-        "data": {
-          "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/reprojected_msoa%20(1).topojson",
-        "format": {"type": "topojson", "feature": "data"}
-        },
-        "transform": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/mapshaper_postcodes.topojson", 
+        "format": {"type": "topojson", "feature": "fixed_postcodes"}
+      },
+      "transform": [
         {
           "filter": {
-            "field": "properties.MSOA21CD",
-            "oneOf": ["E02000313", "E02000314", "E02000746", "E02000319"]  // Replace with the two MSOAs you want
+            "field": "properties.Name",  
+            "oneOf": ["SE28"]  
           }
         }
       ],
-        "mark": {"type": "geoshape", "fill": "lightslategray"}
-      },
-    {
+      "mark": {"type": "geoshape", "fill": "lightslategray", "stroke": "black"}
+    },
+        {
       "data": {
         "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/TM_map_data.csv",
         "format": {"type": "csv"}
@@ -31,13 +31,14 @@
         "size": {
           "field": "Business_Count",
           "type": "quantitative",
+          "title":"Number of Businesses",
           "scale": {"range": [50, 500]}
         },
         "color": {
-          "field": "Average_BusinessRate",
+          "field": "Average_RateableValue",
           "type": "quantitative",
           "scale": {"scheme": "reds"},
-          "legend": {"title": "Average Business Rate"}
+          "legend": {"title": "Average Rateable Value"}
         },
         "tooltip": [
           {"field": "Postcode", "type": "nominal"},
