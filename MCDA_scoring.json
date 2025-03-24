@@ -1,0 +1,45 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Multi-line comparison of mechanisms across criteria",
+  "data": {
+    "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/package_scores.csv",  // replace with your actual CSV link
+    "format": {"type": "csv"}
+  },
+  "width":500,
+  "height":500,
+  "transform": [
+    {
+      "fold": ["Equity", "Political Feasibility", "Revenue"],
+      "as": ["Criterion", "Score"]
+    }
+  ],
+  "mark": {
+    "type": "line",
+    "point": {
+      "filled": true,
+      "size": 70
+    }
+  },
+  "encoding": {
+    "x": {
+      "field": "Criterion",
+      "type": "ordinal",
+      "title": null
+    },
+    "y": {
+      "field": "Score",
+      "type": "quantitative",
+      "title": "Score"
+    },
+    "color": {
+      "field": "Mechanism",
+      "type": "nominal",
+      "title": "Funding Mechanism"
+    },
+    "tooltip": [
+      {"field": "Mechanism", "type": "nominal"},
+      {"field": "Criterion", "type": "nominal"},
+      {"field": "Score", "type": "quantitative", "format": ".1f"}
+    ]
+  }
+}
