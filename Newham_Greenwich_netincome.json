@@ -1,0 +1,44 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 800,
+  "height": 600,
+  "title": "Net Annual Income by MSOA (after housing costs)",
+  "projection": {"type": "mercator"},
+   "title": {
+    "text": "Net income after housing (£)",
+    "align": "center",
+    "offset": 10,
+    "fontSize": 20,
+    "font": "sans-serif",
+    "fontWeight": "lighter"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/reprojected_msoa%20(1).topojson",
+    "format": {"type": "topojson", "feature": "data"}
+  },
+  "transform": [
+    {
+      "lookup": "properties.MSOA21CD",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/Newham_Greenwich_netincome.csv"
+        },
+        "key": "MSOAcode",
+        "fields": ["NetIncome"]
+      }
+    }
+  ],
+  "mark": {"type": "geoshape", "stroke": "white"},
+  "encoding": {
+    "color": {
+      "field": "NetIncome",
+      "type": "quantitative",
+      "title": "Net Income (£)",
+      "scale": {"scheme": "redblue", "reverse":false}
+    },
+    "tooltip": [
+      {"field": "properties.MSOA21CD", "type": "nominal", "title": "MSOA Code"},
+      {"field": "NetIncome", "type": "quantitative", "title": "Net Income (£)"}
+    ]
+  }
+}
