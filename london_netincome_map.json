@@ -1,0 +1,83 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 800,
+  "height": 600,
+  // "title": {
+  //   "text": "Net income (£)",
+  //   "align": "center",
+  //   "offset": 10,
+  //   "fontSize": 20,
+  //   "font": "sans-serif",
+  //   "fontWeight": "lighter"
+  // },
+  "padding":{
+    "right":1000,
+    "top":75,
+    "bottom":75,
+    "left":75
+  },
+  "projection": {"type": "mercator"},
+  "background":"mintcream",
+  "layer": [
+    // 🔺 MSOA Choropleth Layer
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/reprojected_msoa_london2021.topojson",
+        "format": {"type": "topojson", "feature": "data"}
+      },
+      "transform": [
+        {
+          "lookup": "properties.MSOA21CD",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/net_income_london.csv"
+            },
+            "key": "MSOA_code",
+            "fields": ["Average"]
+          }
+        }
+      ],
+      "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 0.2},
+      "encoding": {
+        "color": {
+          "field": "Average",
+          "type": "quantitative",
+          "title": "Net Income (£)",
+      "scale": {"scheme": "redyellowblue", "reverse":false, "domain": [28350, 65300]},
+      "legend":null
+        },
+        "tooltip": [
+          {"field": "properties.MSOA21CD", "type": "nominal", "title": "MSOA Code"},
+          {"field": "Average", "type": "quantitative", "title": "Net Income (£)"}
+        ]
+      }
+    },
+
+    // 🔺 Borough Overlay (Outline Only for Greenwich and Newham)
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/london_421.topojson",
+        "format": {"type": "topojson", "feature": "london_421.geojson"}
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "properties.name",
+            "oneOf": ["Newham", "Greenwich"]
+          }
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "fill": null,
+        "stroke": "black",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "tooltip": [
+          {"field": "properties.name", "type": "nominal", "title": "Borough"}
+        ]
+      }
+    }
+  ]
+}
