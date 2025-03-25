@@ -1,0 +1,50 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 800,
+  "height": 600,
+  "projection": {"type": "mercator"},
+  "background":"mintcream",
+  "padding":{
+    "top":50,
+    "bottom":50
+  },
+  //  "title": {
+  //   "text": "Net income (£)",
+  //   "align": "center",
+  //   "offset": 10,
+  //   "fontSize": 20,
+  //   "font": "sans-serif",
+  //   "fontWeight": "lighter"
+  // },
+  "data": {
+    "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/reprojected_msoa%20(1).topojson",
+    "format": {"type": "topojson", "feature": "data"}
+  },
+  "transform": [
+    {
+      "lookup": "properties.MSOA21CD",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/newham_greenwich_netincome.csv"
+        },
+        "key": "MSOA code",
+        "fields": ["Average"]
+      }
+    }
+  ],
+  "mark": {"type": "geoshape", "stroke": "white"},
+  "encoding": {
+    "color": {
+      "field": "Average",
+      "type": "quantitative",
+      "title": "Net Income (£)",
+      "scale": {"scheme": "redyellowblue", "reverse":false, "domain": [28350, 65300]}, "legend":{
+        "titleFontSize":16,"labelFontSize":14, "gradientLength":300, "gradientThickness":40
+      }
+    },
+    "tooltip": [
+      {"field": "properties.MSOA21CD", "type": "nominal", "title": "MSOA Code"},
+      {"field": "Average", "type": "quantitative", "title": "Net Income (£)"}
+    ]
+  }
+}
