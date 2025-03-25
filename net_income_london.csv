@@ -1,4 +1,4 @@
-﻿MSOA code,MSOA name,Local authority code,Local authority name,Region code,Region name,Net annual income (£),Upper confidence limit (£),Lower confidence limit (£),Confidence interval (£),Average
+﻿MSOA_code,MSOA name,Local authority code,Local authority name,Region code,Region name,Net annual income (£),Upper confidence limit (£),Lower confidence limit (£),Confidence interval (£),Average
 E02000166,Camden 001,E09000007,Camden,E12000007,London,46100,53500,39700,13800,46600
 E02000167,Camden 002,E09000007,Camden,E12000007,London,59200,70000,50000,20000,60000
 E02000168,Camden 003,E09000007,Camden,E12000007,London,48200,55800,41700,14100,48750
