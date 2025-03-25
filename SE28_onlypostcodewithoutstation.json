@@ -3,6 +3,14 @@
   "width": 800,
   "height": 600,
   "projection": {"type": "mercator"},
+  "title": {
+    "text": "SE28 is the only postcode in London without a station",
+    "align": "right",
+    "offset": 10,
+    "fontSize": 20,
+    "font": "sans-serif",
+    "fontWeight": "lighter"
+  },
   "layer": [
     {
       "data": {
@@ -14,9 +22,9 @@
         "color": {
           "condition": {
             "test": "datum['properties.Name'] === 'SE28'",
-            "value": "steelblue"
+            "value": "lightgrey"
           },
-          "value": "lightgray"
+          "value": "#00A69C"
         },
         "tooltip": [
           {"field": "properties.Name", "type": "nominal", "title": "Postcode"},
@@ -32,7 +40,7 @@
         {"filter": "datum.Longitude >= -0.35 && datum.Longitude <= 0.14"},
         {"filter": "datum.Latitude >= 51.38 && datum.Latitude <= 51.66"}
       ],
-      "mark": {"type": "circle", "color": "red", "size": 40},
+      "mark": {"type": "circle", "color": "blue", "size": 40},
       "encoding": {
         "longitude": {"field": "Longitude", "type": "quantitative"},
         "latitude": {"field": "Latitude", "type": "quantitative"},
