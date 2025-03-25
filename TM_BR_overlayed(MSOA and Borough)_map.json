@@ -1,0 +1,34 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 800,
+  "height": 600,
+  "projection": {"type": "mercator"},
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/london_421.topojson",
+        "format": { "feature": "london_421.geojson", "type": "topojson" }
+      },
+      "mark": {"type": "geoshape", "stroke": "white", "fill": "lightgray"},
+      "encoding": {
+        "tooltip": [{"field": "properties.name", "type": "nominal", "title": "Borough"}]
+      }
+    },
+
+{
+        "data": {
+          "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/reprojected_msoa%20(1).topojson",
+        "format": {"type": "topojson", "feature": "data"}
+        },
+        "transform": [
+        {
+          "filter": {
+            "field": "properties.MSOA21CD",
+            "oneOf": ["E02000313", "E02000314", "E02000746"]  // Replace with the MSOAs you want
+          }
+        }
+      ],
+        "mark": {"type": "geoshape", "fill": "lightslategray", "stroke":"red"}
+      },
+  ]
+}
