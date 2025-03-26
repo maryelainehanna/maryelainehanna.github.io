@@ -1,0 +1,70 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 800,
+  "height": 600,
+  "projection": {"type": "mercator"},
+  "background": "mintcream",
+  "padding":{
+    "right": 150,
+    "left":75
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/mapshaper_postcodes.topojson",
+        "format": {"type": "topojson", "feature": "fixed_postcodes"}
+      },
+      "transform": [
+        {"filter": {"field": "properties.Name", "oneOf": ["SE28"]}}
+      ],
+      "mark": {"type": "geoshape", "fill": "beige", "stroke": "black"}
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/TM_map_data.csv",
+        "format": {"type": "csv"}
+      },
+      "mark": "circle",
+      "encoding": {
+        "longitude": {"field": "Longitude", "type": "quantitative"},
+        "latitude": {"field": "Latitude", "type": "quantitative"},
+        "size": {
+          "field": "Business_Count",
+          "type": "quantitative",
+          "title": "Number of Businesses",
+          "scale": {"range": [100, 1000]},
+          "legend": {
+            "symbolSize": 200,
+            "symbolStrokeWidth": 1,
+            "labelFontSize": 14,
+            "titleFontSize": 16
+          }
+        },
+        "color": {
+          "field": "Average_RateableValue",
+          "type": "quantitative",
+          "scale": {"scheme": "reds"},
+          "legend": {
+            "title": "Average Rateable Value (£), 2024-25",
+            "titleAlign":"left",
+            "titleFontSize": 15,
+            "labelFontSize": 15,
+            "gradientLength": 300,
+            "gradientThickness": 30,
+            "labelLimit": 0,
+            "titleLimit":0
+          }
+        },
+        "tooltip": [
+          {"field": "Postcode", "type": "nominal"},
+          {
+            "field": "Average_BusinessRate",
+            "type": "quantitative",
+            "format": ".2f"
+          },
+          {"field": "Business_Count", "type": "quantitative"}
+        ]
+      }
+    }
+  ]
+}
