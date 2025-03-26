@@ -1,0 +1,78 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 300,
+  "height": 500,
+  "title": {"text": ["Final MCDA Scores"], "subtitle":"(ranked by total score)", "subtitleFontStyle":"italic", "subtitleFontSize":15, "fontSize":20},
+  "padding": {"left": 10, "right": 10, "top": 10, "bottom": 10},
+  "data": {
+    "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/package_heat_map_original.csv"
+  },
+  "transform": [
+    {
+      "fold": ["Equity", "Political Feasibility", "Revenue"],
+      "as": ["Metric", "Score"]
+    }
+  ],
+  "layer": [
+    {
+      "mark": {"type": "rect", "stroke": "white"},
+      "encoding": {
+        "x": {
+          "field": "Metric",
+          "type": "ordinal",
+          "title": null,
+          "axis": {"labelAngle": 0, "labelFontSize":15}
+        },
+        "y": {
+          "field": "Mechanism",
+          "type": "ordinal",
+          "sort": "-x",
+          "title": null,
+          "axis": {
+            "labelLimit": 300,
+            "labelAlign": "right",
+            "labelBaseline": "middle",
+            "labelFontSize":13
+          }
+        },
+        "color": {
+          "field": "Score",
+          "type": "quantitative",
+          "scale": {
+            "type": "threshold",
+            "domain": [45, 70],
+            "range": ["#c1121f", "#f4a300", "#007f5f"]
+          },
+          "legend": {
+            "title": "Score"
+          }
+        },
+        "tooltip": [
+          {"field": "Mechanism", "type": "nominal"},
+          {"field": "Metric", "type": "nominal"},
+          {"field": "Score", "type": "quantitative"}
+        ]
+      }
+    },
+    {
+      "transform": [
+        {"filter": "datum.Metric !== 'Revenue'"}
+      ],
+      "mark": {
+        "type": "text",
+        "color": "black",
+        "fontSize": 12,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "x": {"field": "Metric", "type": "ordinal"},
+        "y": {"field": "Mechanism", "type": "ordinal", "sort": "-x"},
+        "text": {
+          "field": "Score",
+          "type": "quantitative",
+          "format": ".1f"
+        }
+      }
+    }
+  ]
+}
