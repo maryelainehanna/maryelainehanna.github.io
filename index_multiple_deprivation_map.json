@@ -1,0 +1,74 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 800,
+  "height": 600,
+  "padding":{
+    "right":100,
+    "top":75,
+    "bottom":75,
+    "left":75
+  },
+  "projection": {"type": "mercator"},
+  "background":"mintcream",
+  "layer": [
+    // 🔺 MSOA Choropleth Layer
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/reprojected_msoa_london2021.topojson",
+        "format": {"type": "topojson", "feature": "data"}
+      },
+      "transform": [
+        {
+          "lookup": "properties.MSOA21CD",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/deprivation_scores.csv"
+            },
+            "key": "MSOAC",
+            "fields": ["IMD19 SCORE"]
+          }
+        }
+      ],
+      "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 0.2},
+      "encoding": {
+        "color": {
+          "field": "IMD19 SCORE",
+          "type": "quantitative",
+          "title": "Index of Multiple Deprivation",
+      "scale": {"scheme": "redyellowblue", "reverse":false, },
+        },
+        "tooltip": [
+          {"field": "properties.MSOA21CD", "type": "nominal", "title": "MSOA Code"},
+          {"field": "IMD19 SCORE", "type": "quantitative", "title": "Net Income (£)"}
+        ]
+      }
+    },
+
+    // 🔺 Borough Overlay (Outline Only for Greenwich and Newham)
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/maryelainehanna/maryelainehanna.github.io/refs/heads/main/london_421.topojson",
+        "format": {"type": "topojson", "feature": "london_421.geojson"}
+      },
+      "transform": [
+        {
+          "filter": {
+            "field": "properties.name",
+            "oneOf": ["Newham", "Greenwich"]
+          }
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "fill": null,
+        "stroke": "black",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "tooltip": [
+          {"field": "properties.name", "type": "nominal", "title": "Borough"}
+        ]
+      }
+    }
+  ]
+}
